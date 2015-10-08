@@ -12,8 +12,6 @@ const _addMonth = (count, date) => {
   let clone = new Date(date);
   clone.setMonth(date.getMonth() + count);
   if (clone.getMonth() !== (date.getMonth() + count) % 12) {
-    console.log('date', date);
-    console.log('clone', clone);
     return new Error('Invalid date');
   }
   return clone;
