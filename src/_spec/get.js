@@ -41,7 +41,6 @@ describe('get', function () {
   it('should return the year', function () {
     const input = new Date('2015-01-02 11:22:33.123');
     const year = get('year', input);
-    console.log(input);
     assert.equal(year, 2015);
   });
 });

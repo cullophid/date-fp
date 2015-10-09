@@ -2,7 +2,7 @@
   "name": "date-fp",
   "version": "1.0.2",
   "description": "Functional programming date management.",
-  "main": "build/date-fp.js",
+  "main": "index.js",
   "dependencies": {
     "lodash.curry": "^3.0.2"
   },

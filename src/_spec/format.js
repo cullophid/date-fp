@@ -4,6 +4,15 @@ import format from '../format';
 
 const date = new Date('2015-03-04 09:08:05.023');
 describe('format', function () {
+  it('complex date string', function () {
+    assert.equal(format('YYYY-MM-DD HH:mm:ss.SSS', new Date('2015-03-04 22:08:05.023')), '2015-03-04 22:08:05.023');
+  });
+
+  it('should be curried', function () {
+    const str = '2015-01-02';
+    assert.equal(format(str)(date), format(str, date));
+  });
+
   it('YYYY', function () {
     assert.equal(format('YYYY', date), '2015');
   });
@@ -105,8 +114,6 @@ describe('format', function () {
     assert.equal(format('S', date), '0');
   });
 
-  it('complex date string', function () {
-    assert.equal(format('YYYY-MM-DD HH:mm:ss.SSS', new Date('2015-03-04 22:08:05.023')), '2015-03-04 22:08:05.023');
-  });
+
 
 });
