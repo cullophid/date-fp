@@ -1,6 +1,6 @@
 'use strict';
 import curry from 'lodash.curry';
-import {DATE_TOKENS, DAYS, MONTHS} from './helpers/constants';
+import {DATE_TOKENS, WEEKDAYS, MONTHS} from './helpers/constants';
 import {fill, firstN, lastN} from './helpers/util';
 
 const tokenFunctions = {
@@ -12,9 +12,9 @@ const tokenFunctions = {
   M:    d => d.getMonth() + 1,
   DD:   d => fill(2, d.getDate()),
   D:    d => d.getDate(),
-  dddd: d => DAYS[d.getDay()],
-  ddd:  d => firstN(3,DAYS[d.getDay()]),
-  dd:   d => firstN(2,DAYS[d.getDay()]),
+  dddd: d => WEEKDAYS[d.getDay()],
+  ddd:  d => firstN(3,WEEKDAYS[d.getDay()]),
+  dd:   d => firstN(2,WEEKDAYS[d.getDay()]),
   d:    d => d.getDay(),
   HH:   d => fill(2, d.getHours()),
   H:    d => d.getHours(),
