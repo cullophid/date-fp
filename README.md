@@ -12,11 +12,8 @@ There are several excellent JavaScript libraries for managing dates in JavaScrip
 
 *Also check out [Ramda.js](http://ramdajs.com/0.17/index.html) (A great library for functional programming with JavaScript)*
 
-
 ## Key concepts
 All functions in **date-fp** follows a set of functional programming principles.
-
-
 
 ### Generic Date objects
 **date-fp** operates on normal JavaScript date objects. There are no wrapper objects, and **date-fp** doest not extend or mutate any native JavaScript objects. Among other things this means that you can still use normal comparison operators like `<` and `>`.
@@ -41,7 +38,6 @@ const tomorrowAsString = compose(D.format('YYY-MM-DD'), D.add('days', 1));
 
 tomorrowAsString(new Date('2015-01-01')); // '2015-01-02';
 ```
-
 
 ## API
 
@@ -200,4 +196,4 @@ Thanks to John-David Dalton for [`lodash.curry`](https://www.npmjs.com/package/l
 Thanks to the team behind [Ramda.js](https://github.com/ramda/ramda) and [moment.js](https://github.com/moment/moment) for inspiration.
 
 ## Contributing
-yes please!
+Yes please!
