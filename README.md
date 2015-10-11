@@ -196,8 +196,8 @@ D.format('MMMM D YYYY', date); // 'January 2 2015'
 |                 | S     | 1... 9              |
 
 ## Credit
-Thanks to John-David Dalton for lodash.curry
-Thanks to the team behind Ramda.js and moment.js for inspiration.
+Thanks to John-David Dalton for [`lodash.curry`](https://www.npmjs.com/package/lodash.curry)
+Thanks to the team behind [Ramda.js](https://github.com/ramda/ramda) and [moment.js](https://github.com/moment/moment) for inspiration.
 
 ## Contributing
 yes please!
