@@ -1,6 +1,6 @@
 'use strict';
 import curry from 'lodash.curry';
-import {get} from './get';
+import get from './get';
 import {DATE_UNITS} from './helpers/constants';
 
 export default curry((unit, date1, date2) => {
@@ -16,6 +16,6 @@ export default curry((unit, date1, date2) => {
   if (!DATE_UNITS[unit]) {
     return Error('Invalid date unit');
   }
-  
+
   return Math.round((date2 - date1) / DATE_UNITS[unit]);
 });

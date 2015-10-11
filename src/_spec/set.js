@@ -1,12 +1,17 @@
 'use strict';
 import assert from 'assert';
-import {set} from '../set';
+import set from '../set';
 
 describe('set', function () {
   it('should return a new date', function () {
-      const input = new Date('2015-01-01 11:22:33.333 11:22:33.333');
+      const input = new Date('2015-01-01 11:22:33.333');
       const actual = set('milliseconds', 0, input);
       assert.notEqual(actual, input);
+  });
+
+  it('should be curried', function () {
+      const date = new Date('2015-01-01 11:22:33.333');
+      assert.deepEqual(set('seconds')(5)(date), set('seconds', 5, date));
   });
 
   it('should not change the original date', function () {

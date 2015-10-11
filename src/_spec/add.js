@@ -1,6 +1,6 @@
 'use strict';
 import assert from 'assert';
-import {add} from '../add';
+import add from '../add';
 const SECOND = 1000;
 const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;
@@ -12,6 +12,11 @@ describe('add', function () {
     assert.notEqual(date, actual, 'should return a new date');
     assert.equal(date.toString(), new Date('2015-01-01').toString(), 'should not change the original date');
     assert.equal(actual.toString(), new Date('2015-01-03').toString(), 'should return a date 2 days after the input date');
+  });
+
+  it('should be curried', function () {
+    const date = new Date('2015-01-01');
+    assert.deepEqual(add('days')(2)(date), add('days', 2, date));
   });
 
   it('should work for milliseconds', function () {

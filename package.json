@@ -7,7 +7,7 @@
     "lodash.curry": "^3.0.2"
   },
   "scripts": {
-    "build": "browserify src/index.js -t babelify --outfile build/date-fp.js",
+    "build": "browserify browser.js -t babelify --outfile build/date-fp.js",
     "uglify": "uglify -s build/date-fp.js -o build/date-fp.min.js",
     "buildAll": "npm run build && npm run uglify",
     "test": "mocha --compilers js:babel/register 'src/**/_spec/*.js'",

@@ -1,6 +1,6 @@
 'use strict';
 import curry from 'lodash.curry';
-import {get} from './get';
+import get from './get';
 
 const setters = {
   'milliseconds': (value, date) => date.setMilliseconds(value),
@@ -12,7 +12,7 @@ const setters = {
   'year': (value, date) => date.setFullYear(value),
 };
 
-export const set = curry((step, value, date) => {
+export default curry((step, value, date) => {
   if(!setters.hasOwnProperty(step)) {
     return new Error(step + 'is not a valid date step');
   }

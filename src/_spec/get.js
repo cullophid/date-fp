@@ -1,8 +1,13 @@
 'use strict';
 import assert from 'assert';
-import {get} from '../get';
+import get from '../get';
 
 describe('get', function () {
+  it('should be curried', function () {
+    const date = new Date('2015-01-02 11:22:33.123');
+    assert.equal(get('seconds')(date), get('seconds', date));
+  });
+
   it('should return the milliseconds', function () {
     const input = new Date('2015-01-02 11:22:33.123');
     const milliseconds = get('milliseconds', input);

@@ -23,7 +23,7 @@ const _addYear = (count, date) => {
   return clone;
 };
 
-export const add = curry((step, count, date) => {
+export default curry((step, count, date) => {
   switch (step) {
     case 'months':
       return _addMonth(count, date);
@@ -36,11 +36,3 @@ export const add = curry((step, count, date) => {
       return new Date((steps[step] * count) + date.getTime());
   }
 });
-
-export const addMilliseconds = add('milliseconds');
-export const addSeconds = add('seconds');
-export const addMinutes = add('minutes');
-export const addHours = add('hours');
-export const addDays = add('days');
-export const addMonths = add('months');
-export const addYears = add('years');

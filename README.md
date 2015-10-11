@@ -1,11 +1,46 @@
 # date-fp
-Library for manipulating dates in JavaScript based on the principles of functional programming.
 
-## Immutability
- Dates in date-fp are newer mutated. All operations that modifies a date returns a copy with the given changes, and leaves the original date object intact.
+[![Circle CI](https://circleci.com/gh/cullophid/date-fp.svg?style=svg)](https://circleci.com/gh/cullophid/date-fp)
+[![npm version](https://badge.fury.io/js/date-fp.svg)](https://badge.fury.io/js/date-fp)
 
-## Currying
-All functions in date-fp uses automatic currying.
+**date-fp** is a utility library for working with JavaScript dates.
+
+## Motivation
+There are several excellent JavaScript libraries for managing dates in JavaScript but they are generally build to be used in the object-oriented programming paradigm. This makes them cumbersome to include in a functional context.
+
+*If you are not familiar with functional programming in javascript read [Professor Frisby's Mostly Adequate Guide to  Functional Programming](https://drboolean.gitbooks.io/mostly-adequate-guide/content/)*
+
+*Also check out [Ramda.js](http://ramdajs.com/0.17/index.html) (A great library for functional programming with javascript)*
+
+
+## Key concepts
+All functions in **date-fp** follows a set of functional programming principles.
+
+
+
+### Generic Date objects
+**date-fp** operates on normal javascript date objects. There are no wrapper objects, and **date-fp** doest not extend or mutate any native javascript objects. Among other things this means that you can still use normal comparison operators like `<` and `>`.
+
+### Purity
+All functions in **date-fp** are pure. For a function to be pure it must follow two basic rules.
+1. Pure function always produce the same output given the same input.
+2. Pure functions have no side effects. This means that calling the function will not affect the world outside the function.
+
+### Immutability
+ Dates in date-fp are newer mutated. All operations that modifies a date returns a copy with the given changes, and leaves the original date object intact and unchanged.
+
+### Currying
+All functions in date-fp uses automatic currying. This allows easy partial application of **date-fp** functions. For more information on currying read: [Why Curry Helps](https://web.archive.org/web/20140714014530/http://hughfdjackson.com/javascript/why-curry-helps)
+
+### Composition
+functions in **date-fp** take the data(usually a date object) as the last parameter. This, combined with currying, allows for easy function composition.
+
+```js
+const tomorrowAsString = compose(D.format('YYY-MM-DD'), D.add('days', 1));
+
+tomorrowAsString(new Date('2015-01-01')); // '2015-01-02';
+```
+
 
 ## API
 
@@ -162,3 +197,6 @@ D.format('MMMM D YYYY', date); // 'January 2 2015'
 ## Credit
 Thanks to John-David Dalton for lodash.curry
 Thanks to the team behind Ramda.js and moment.js for inspiration.
+
+## Contributing
+yes please!
