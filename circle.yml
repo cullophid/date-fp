@@ -10,7 +10,8 @@ test:
   override:
     - npm install
     - npm test
-    - npm run buildAll
+    - npm run build
+    - npm run testBuild
 
 deployment:
  npm:
