@@ -1,3 +1,3 @@
 'use strict';
-import D from './index';
+import D from './src/index';
 window.D = D;

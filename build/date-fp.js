@@ -3,65 +3,13 @@
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _index = require('./index');
+var _srcIndex = require('./src/index');
 
-var _index2 = _interopRequireDefault(_index);
+var _srcIndex2 = _interopRequireDefault(_srcIndex);
 
-window.D = _index2['default'];
+window.D = _srcIndex2['default'];
 
-},{"./index":2}],2:[function(require,module,exports){
-'use strict';
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _srcParse = require('./src/parse');
-
-var _srcParse2 = _interopRequireDefault(_srcParse);
-
-var _srcGet = require('./src/get');
-
-var _srcGet2 = _interopRequireDefault(_srcGet);
-
-var _srcDiff = require('./src/diff');
-
-var _srcDiff2 = _interopRequireDefault(_srcDiff);
-
-var _srcFormat = require('./src/format');
-
-var _srcFormat2 = _interopRequireDefault(_srcFormat);
-
-var _srcSet = require('./src/set');
-
-var _srcSet2 = _interopRequireDefault(_srcSet);
-
-var _srcAdd = require('./src/add');
-
-var _srcAdd2 = _interopRequireDefault(_srcAdd);
-
-var _srcSub = require('./src/sub');
-
-var _srcSub2 = _interopRequireDefault(_srcSub);
-
-var clone = function clone(date) {
-  return new Date(date.getTime());
-};
-
-exports['default'] = {
-  add: _srcAdd2['default'],
-  clone: clone,
-  diff: _srcDiff2['default'],
-  format: _srcFormat2['default'],
-  get: _srcGet2['default'],
-  parse: _srcParse2['default'],
-  set: _srcSet2['default'],
-  sub: _srcSub2['default']
-};
-module.exports = exports['default'];
-
-},{"./src/add":9,"./src/diff":10,"./src/format":11,"./src/get":12,"./src/parse":15,"./src/set":16,"./src/sub":17}],3:[function(require,module,exports){
+},{"./src/index":14}],2:[function(require,module,exports){
 /**
  * lodash 3.0.2 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -142,7 +90,7 @@ curry.placeholder = {};
 
 module.exports = curry;
 
-},{"lodash._createwrapper":4,"lodash._isiterateecall":8}],4:[function(require,module,exports){
+},{"lodash._createwrapper":3,"lodash._isiterateecall":7}],3:[function(require,module,exports){
 (function (global){
 /**
  * lodash 3.0.7 (Custom Build) <https://lodash.com/>
@@ -541,7 +489,7 @@ function isObject(value) {
 module.exports = createWrapper;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"lodash._arraycopy":5,"lodash._basecreate":6,"lodash._replaceholders":7}],5:[function(require,module,exports){
+},{"lodash._arraycopy":4,"lodash._basecreate":5,"lodash._replaceholders":6}],4:[function(require,module,exports){
 /**
  * lodash 3.0.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -572,7 +520,7 @@ function arrayCopy(source, array) {
 
 module.exports = arrayCopy;
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /**
  * lodash 3.0.3 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -631,7 +579,7 @@ function isObject(value) {
 
 module.exports = baseCreate;
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /**
  * lodash 3.0.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -670,7 +618,7 @@ function replaceHolders(array, placeholder) {
 
 module.exports = replaceHolders;
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  * lodash 3.0.9 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -804,7 +752,7 @@ function isObject(value) {
 
 module.exports = isIterateeCall;
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -854,7 +802,7 @@ exports['default'] = (0, _lodashCurry2['default'])(function (step, count, date) 
 });
 module.exports = exports['default'];
 
-},{"lodash.curry":3}],10:[function(require,module,exports){
+},{"lodash.curry":2}],9:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -889,7 +837,7 @@ exports['default'] = (0, _lodashCurry2['default'])(function (unit, date1, date2)
 });
 module.exports = exports['default'];
 
-},{"./get":12,"./helpers/constants":13,"lodash.curry":3}],11:[function(require,module,exports){
+},{"./get":11,"./helpers/constants":12,"lodash.curry":2}],10:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -992,7 +940,7 @@ exports['default'] = (0, _lodashCurry2['default'])(function (format, date) {
 });
 module.exports = exports['default'];
 
-},{"./helpers/constants":13,"./helpers/util":14,"lodash.curry":3}],12:[function(require,module,exports){
+},{"./helpers/constants":12,"./helpers/util":13,"lodash.curry":2}],11:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -1036,7 +984,7 @@ exports['default'] = (0, _lodashCurry2['default'])(function (prop, date) {
 });
 module.exports = exports['default'];
 
-},{"lodash.curry":3}],13:[function(require,module,exports){
+},{"lodash.curry":2}],12:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -1058,7 +1006,7 @@ var DATE_UNITS = {
 };
 exports.DATE_UNITS = DATE_UNITS;
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -1085,7 +1033,59 @@ var fill = (0, _lodashCurry2['default'])(function (digits, n) {
 });
 exports.fill = fill;
 
-},{"lodash.curry":3}],15:[function(require,module,exports){
+},{"lodash.curry":2}],14:[function(require,module,exports){
+'use strict';
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _parse = require('./parse');
+
+var _parse2 = _interopRequireDefault(_parse);
+
+var _get = require('./get');
+
+var _get2 = _interopRequireDefault(_get);
+
+var _diff = require('./diff');
+
+var _diff2 = _interopRequireDefault(_diff);
+
+var _format = require('./format');
+
+var _format2 = _interopRequireDefault(_format);
+
+var _set = require('./set');
+
+var _set2 = _interopRequireDefault(_set);
+
+var _add = require('./add');
+
+var _add2 = _interopRequireDefault(_add);
+
+var _sub = require('./sub');
+
+var _sub2 = _interopRequireDefault(_sub);
+
+var clone = function clone(date) {
+  return new Date(date.getTime());
+};
+
+exports['default'] = {
+  add: _add2['default'],
+  clone: clone,
+  diff: _diff2['default'],
+  format: _format2['default'],
+  get: _get2['default'],
+  parse: _parse2['default'],
+  set: _set2['default'],
+  sub: _sub2['default']
+};
+module.exports = exports['default'];
+
+},{"./add":8,"./diff":9,"./format":10,"./get":11,"./parse":15,"./set":16,"./sub":17}],15:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -1155,7 +1155,7 @@ exports['default'] = (0, _lodashCurry2['default'])(function (step, value, date) 
 });
 module.exports = exports['default'];
 
-},{"./get":12,"lodash.curry":3}],17:[function(require,module,exports){
+},{"./get":11,"lodash.curry":2}],17:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -1174,4 +1174,4 @@ exports['default'] = (0, _lodashCurry2['default'])(function (step, value, date) 
 });
 module.exports = exports['default'];
 
-},{"./add":9,"lodash.curry":3}]},{},[1]);
+},{"./add":8,"lodash.curry":2}]},{},[1]);
