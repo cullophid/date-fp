@@ -2,6 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/cullophid/date-fp.svg?style=svg)](https://circleci.com/gh/cullophid/date-fp)
 [![npm version](https://badge.fury.io/js/date-fp.svg)](https://badge.fury.io/js/date-fp)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cullophid/date-fp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 **date-fp** is a utility library for working with JavaScript dates.
 
