@@ -7,7 +7,7 @@
     "lodash.curry": "^3.0.2"
   },
   "scripts": {
-    "buildBrowser": "browserify browser.js -t babelify --outfile build/date-fp.js",
+    "buildBrowser": "mkdir -p build && browserify browser.js -t babelify --outfile build/date-fp.js",
     "transpile": "babel src -d dist",
     "uglify": "uglify -s build/date-fp.js -o build/date-fp.min.js",
     "build": "npm run transpile && npm run buildBrowser && npm run uglify",
