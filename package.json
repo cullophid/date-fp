@@ -2,14 +2,14 @@
   "name": "date-fp",
   "version": "1.1.7",
   "description": "Functional programming date management.",
-  "main": "dist/index.js",
+  "main": "build/date-fp.js",
   "dependencies": {
     "lodash.curry": "^3.0.2"
   },
   "scripts": {
-    "buildBrowser": "mkdir -p build && browserify browser.js -t babelify --outfile build/date-fp.js",
+    "buildBrowser": "mkdir -p build && browserify dist -t babelify --outfile build/date-fp.js --standalone date-fp",
     "transpile": "babel src -d dist",
-    "uglify": "uglify -s build/date-fp.js -o build/date-fp.min.js",
+    "uglify": "uglifyjs build/date-fp.js -o build/date-fp.min.js --source-map build/date-fp.min.map -p relative",
     "build": "npm run transpile && npm run buildBrowser && npm run uglify",
     "test": "mocha --compilers js:babel/register 'src/**/_spec/*.js'",
     "testBuild": "mocha buildTest.js",
@@ -24,8 +24,13 @@
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
     "mocha": "^2.3.3",
-    "uglify": "^0.1.5"
+    "uglifyjs": "^2.4.10"
   },
+  "files": [
+    "README.md",
+    "build",
+    "dist"
+  ],
   "author": "",
   "license": "ISC"
 }
