@@ -2,10 +2,6 @@ machine:
   node:
     version: 4.0.0
 
-dependencies:
-  override:
-    - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
-
 test:
   override:
     - npm install
@@ -17,4 +13,5 @@ deployment:
  npm:
     branch: master
     commands:
+      - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
       - npm publish
