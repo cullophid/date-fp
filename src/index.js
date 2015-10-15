@@ -7,6 +7,7 @@ import set from './set';
 import add from './add';
 import sub from './sub';
 import min from './min';
+import max from './max';
 import isValid from './isValid';
 
 const clone = date => new Date(date.getTime());
@@ -21,5 +22,6 @@ export default {
   set,
   sub,
   min,
+  max,
   isValid
 };
