@@ -60,6 +60,19 @@ Returns a copy of the given date
 const date = D.clone(new Date('2015-01-01')); // Thu Jan 01 2015 00:00:00 GMT+0000 (GMT)
 ```
 
+### isValid
+`Date -> bool`
+
+Verifies if a previously constructed Javascript date is valid.
+
+```js
+var d1 = new Date('foo'); // Invalid Date
+D.isValid(d1); // false
+
+var d1 = new Date('04-09-2014'); // Wed Apr 09 2014 00:00:00 GMT+0000 (GMT)
+D.isValid(d1); // true
+```
+
 ### get
 `String -> Date -> Date`
 
@@ -146,6 +159,40 @@ D.diff('hours', date1, new Date('2014-02-01 22:12:13.123')); // 11
 D.diff('days', date1, new Date('2014-02-05 11:12:13.123')); // 4
 D.diff('months', date1, new Date('2014-04-01 11:12:13.123')); // 2
 D.diff('years', date1, new Date('2015-04-01 11:12:13.123')); // 1
+```
+
+## min
+
+`[Date] -> Date | Error`
+
+Takes an array of dates and returns the oldest one. Ignores invalid Javascript date objects and returns 
+an error if no valid date objects are provided.
+
+```js
+const date1 = new Date('2015-01-01 11:22:33.333');
+const date2 = new Date('2014-04-09 01:22:33.333');
+const invalidDate = new Date('foo'); 
+
+D.min([date1, date2]); // date2
+D.min([date1, date2, invalidDate]); // date2
+D.min([invalidDate]); // Error
+```
+
+## max
+
+`[Date] -> Date | Error`
+
+Takes an array of dates and returns the latest one. Ignores invalid Javascript date objects and returns 
+an error if no valid date objects are provided.
+
+```js
+const date1 = new Date('2015-01-01 11:22:33.333');
+const date2 = new Date('2014-04-09 01:22:33.333');
+const invalidDate = new Date('foo'); 
+
+D.min([date1, date2]); // date1
+D.min([date1, date2, invalidDate]); // date1
+D.min([invalidDate]); // Error
 ```
 
 ## format
