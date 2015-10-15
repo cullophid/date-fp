@@ -190,9 +190,9 @@ const date1 = new Date('2015-01-01 11:22:33.333');
 const date2 = new Date('2014-04-09 01:22:33.333');
 const invalidDate = new Date('foo'); 
 
-D.min([date1, date2]); // date1
-D.min([date1, date2, invalidDate]); // date1
-D.min([invalidDate]); // Error
+D.max([date1, date2]); // date1
+D.max([date1, date2, invalidDate]); // date1
+D.max([invalidDate]); // Error
 ```
 
 ## format
