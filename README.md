@@ -63,7 +63,7 @@ const date = D.clone(new Date('2015-01-01')); // Thu Jan 01 2015 00:00:00 GMT+00
 ### isValid
 `Date -> bool`
 
-Verifies if a previously constructed Javascript date is valid.
+Verifies if a specific Javascript date object is valid.
 
 ```js
 var d1 = new Date('foo'); // Invalid Date
