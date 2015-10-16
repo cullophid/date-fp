@@ -90,6 +90,18 @@ D.get('year', date); // 2015
 
 ```
 
+###unixTime
+`String -> Date -> Number | Error`
+Returns the unix time of the supplied Javascript date object in the specified
+time unit (seconds or milliseconds).
+Returns an error if the Javascript date object is not valid.
+
+```js
+const date = new Date('2015-10-16T00:00:00+00:00')
+D.unixTime('milliseconds', date) // 1444996800000
+D.unixTime('seconds', date) // 1444996800
+```
+
 ### set
 `String -> Number -> Date -> Date`
 
