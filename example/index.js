@@ -41,6 +41,6 @@ console.log('parse two dates, find the difference between them:',
     parseAndDiffDates(['2013-01-01', '2014-01-01']));
 
 // [Date] -> String
-const findLatestSubtractAndTwoFormat = compose(D.format('DD/MM/YY'), D.add('months', 2), D.max);
+const indLatestAddTwoFormat = compose(D.format('DD/MM/YY'), D.add('months', 2), D.max);
 console.log('find latest date, add two months and format result:',
     findLatestAddTwoFormat([new Date('2013-01-01'), new Date('2014-01-01')]));
