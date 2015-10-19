@@ -7,10 +7,9 @@
     "lodash.curry": "^3.0.2"
   },
   "scripts": {
-    "buildBrowser": "mkdir -p build && browserify src/index.js -t babelify --outfile build/date-fp.js --standalone date-fp",
-    "transpile": "babel src -d dist",
+    "webpack": "webpack src/index.js build/date-fp.js --config webpack.config.js",
     "uglify": "uglifyjs build/date-fp.js -o build/date-fp.min.js --source-map build/date-fp.min.map -p relative",
-    "build": "npm run buildBrowser && npm run uglify",
+    "build": "npm run webpack && npm run uglify",
     "test": "mocha --compilers js:babel/register 'src/**/_spec/*.js'",
     "testBuild": "mocha buildTest.js",
     "watch": "mocha --watch --compilers js:babel/register 'src/**/_spec/*.js'"
@@ -21,10 +20,12 @@
   },
   "devDependencies": {
     "babel": "^5.8.23",
-    "babelify": "^6.3.0",
-    "browserify": "^11.2.0",
+    "babel-loader": "^5.3.2",
+    "eslint": "^1.7.1",
+    "eslint-plugin-react": "^3.6.2",
     "mocha": "^2.3.3",
-    "uglifyjs": "^2.4.10"
+    "uglifyjs": "^2.4.10",
+    "webpack": "^1.12.2"
   },
   "files": [
     "README.md",

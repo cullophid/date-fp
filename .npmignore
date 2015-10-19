@@ -4,3 +4,6 @@ buildTest.js
 circle.yml
 sandbox.js
 .jshintrc
+.eslintrc
+.eslintignore
+webpack.config.js
