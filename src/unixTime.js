@@ -1,5 +1,4 @@
 'use strict';
-import curry from 'lodash.curry';
-import fromEpoch from './fromEpoch';
+import convertTo from './convertTo';
 
-export default fromEpoch('seconds');
+export default convertTo('seconds');
