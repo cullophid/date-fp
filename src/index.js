@@ -9,6 +9,7 @@ import sub from './sub';
 import min from './min';
 import max from './max';
 import isValid from './isValid';
+import fromEpoch from './fromEpoch';
 import unixTime from './unixTime';
 
 const clone = date => new Date(date.getTime());
@@ -25,5 +26,6 @@ export default {
   min,
   max,
   isValid,
+  fromEpoch,
   unixTime
 };
