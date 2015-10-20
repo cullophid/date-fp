@@ -90,6 +90,33 @@ D.get('year', date); // 2015
 
 ```
 
+###convertTo
+`String -> Date -> Number | Error`
+
+Returns the time since the Unix epoch, in the specified unit (milliseconds, seconds, minutes, hours, days),
+of the supplied Javascript date object.
+Returns an error if the Javascript date object is not valid.
+
+```js
+const date = new Date('2015-10-16T00:00:00+00:00')
+D.convertTo('milliseconds', date) // 1444953600000
+D.convertTo('seconds', date) // 1444953600
+D.convertTo('minutes', date) // 24082560
+D.convertTo('hours', date) // 401376
+D.convertTo('days', date) // 16724
+```
+
+###unixTime
+`Date -> Number | Error`
+
+Returns the time since the Unix epoch in seconds of the supplied Javascript date object
+Returns an error if the Javascript date object is not valid.
+
+```js
+const date = new Date('2015-10-16T00:00:00+00:00')
+D.unixTime(date) // 1444996800
+```
+
 ### set
 `String -> Number -> Date -> Date`
 

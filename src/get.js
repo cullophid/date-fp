@@ -7,7 +7,7 @@ const getters = {
   'hours': date => date.getHours(),
   'date': date => date.getDate(),
   'month': date => date.getMonth() + 1,
-  'year': date => date.getFullYear(),
+  'year': date => date.getFullYear()
 };
 
 export default curry((prop, date) => {
