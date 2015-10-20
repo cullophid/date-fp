@@ -54,6 +54,11 @@ describe('add', function () {
       assert.equal(actual.toString(), 'Error: Invalid date');
   });
 
+  it('should return an error if the unit of time is invalid', function () {
+    const actual = add('foo', 1, new Date('2015-01-30')).message;
+    assert.equal(actual, 'Unit is invalid, must be one of milliseconds,seconds,minutes,hours,days. Got: foo');
+  });
+
   it('should work for year', function () {
     const actual = add('years', 1, new Date(0));
     assert.equal(1971, actual.getFullYear());
