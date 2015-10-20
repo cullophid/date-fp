@@ -129,9 +129,9 @@ D.set('milliseconds', 123, date);
 D.set('seconds', 34, date);
 D.set('minutes', 22, date);
 D.set('hours', 13, date);
-D.set('date', 23, date);
-D.set('month', 12, date);
-D.set('year', 2001, date);
+D.set('days', 23, date);
+D.set('months', 12, date);
+D.set('years', 2001, date);
 ```
 
 ### add
@@ -146,9 +146,9 @@ D.add('milliseconds', 123, date);
 D.add('seconds', 34, date);
 D.add('minutes', 22, date);
 D.add('hours', 13, date);
-D.add('date', 23, date);
-D.add('month', 12, date);
-D.add('year', 2001, date);
+D.add('days', 23, date);
+D.add('months', 12, date);
+D.add('years', 2001, date);
 
 ```
 

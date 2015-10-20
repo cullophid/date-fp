@@ -31,7 +31,7 @@ export default curry((step, count, date) => {
       return _addYear(count, date);
     default:
       if (steps[step] === undefined) {
-        return new Error('Step is invalid');
+        return new Error('Unit is invalid, must be one of ' + Object.keys(steps) + ',months,years. Got: ' + step);
       }
       return new Date((steps[step] * count) + date.getTime());
   }

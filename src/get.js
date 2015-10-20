@@ -12,7 +12,7 @@ const getters = {
 
 export default curry((prop, date) => {
   if (!getters.hasOwnProperty(prop)) {
-    return new Error('Invalid Date property');
+    return new Error('Invalid Date property, must be one of ' + Object.keys(getters) + '.');
   }
   return getters[prop](date);
 });
