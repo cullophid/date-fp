@@ -90,7 +90,7 @@ D.get('year', date); // 2015
 
 ```
 
-###convertTo
+### convertTo
 `String -> Date -> Number | Error`
 
 Returns the time since the Unix epoch, in the specified unit (milliseconds, seconds, minutes, hours, days),
@@ -106,7 +106,7 @@ D.convertTo('hours', date) // 401376
 D.convertTo('days', date) // 16724
 ```
 
-###unixTime
+### unixTime
 `Date -> Number | Error`
 
 Returns the time since the Unix epoch in seconds of the supplied Javascript date object
@@ -170,7 +170,19 @@ D.sub('year', 2001, date);
 
 ```
 
-## diff
+### equal
+`Date -> Date -> bool | Error`
+
+Uses value equality to determine if the two supplied dates are the same.
+Returns an error if any of the date objects are invalid.
+
+```js
+const date = new Date('2015-04-09');
+D.equals(date, new Date('2015-04-09')); // true
+D.equals(date, new Date('2014-01-01')); //false
+```
+
+### diff
 
 `String -> Date -> Date -> Number`
 
@@ -188,7 +200,7 @@ D.diff('months', date1, new Date('2014-04-01 11:12:13.123')); // 2
 D.diff('years', date1, new Date('2015-04-01 11:12:13.123')); // 1
 ```
 
-## min
+### min
 
 `[Date] -> Date | Error`
 
@@ -205,7 +217,7 @@ D.min([date1, date2, invalidDate]); // date2
 D.min([invalidDate]); // Error
 ```
 
-## max
+### max
 
 `[Date] -> Date | Error`
 
@@ -222,7 +234,7 @@ D.max([date1, date2, invalidDate]); // date1
 D.max([invalidDate]); // Error
 ```
 
-## format
+### format
 `String -> Date -> String`
 
 Returns a string representation of a date on the specified format

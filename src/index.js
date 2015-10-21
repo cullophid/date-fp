@@ -1,6 +1,7 @@
 'use strict';
 import parse from './parse';
 import get from './get';
+import equals from './equals';
 import diff from './diff';
 import format from './format';
 import set from './set';
@@ -17,6 +18,7 @@ const clone = date => new Date(date.getTime());
 export default {
   add,
   clone,
+  equals,
   diff,
   format,
   get,
