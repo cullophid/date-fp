@@ -4,7 +4,7 @@ var D = require('./');
 describe('test build', function () {
   it('should have all the functions available', function () {
     assert.deepEqual(Object.keys(D), [
-      'add', 'clone', 'diff', 'format', 'get', 'parse',
+      'add', 'clone', 'equals', 'diff', 'format', 'get', 'parse',
       'set', 'sub', 'min', 'max', 'isValid', 'convertTo', 'unixTime'
     ]);
     Object.keys(D).forEach(function (key) {
