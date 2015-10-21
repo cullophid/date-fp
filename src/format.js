@@ -28,7 +28,7 @@ const tokenFunctions = {
   a:    d => d.getHours() > 11 ? 'pm': 'am',
   SSS:  d => fill(3, d.getMilliseconds()),
   SS:   d => firstN(2, fill(3, d.getMilliseconds())),
-  S:    d => firstN(1, fill(3, d.getMilliseconds())),
+  S:    d => firstN(1, fill(3, d.getMilliseconds()))
 };
 
 const swapTokenWithValue = curry((date, token) => tokenFunctions[token] ? tokenFunctions[token](date): token);

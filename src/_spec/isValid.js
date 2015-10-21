@@ -4,6 +4,10 @@ import isValid from '../isValid';
 
 describe('isValid', () => {
 
+    it('should return false for non date objects', () => {
+        assert.strictEqual(isValid('date'), false);
+    });
+
     it('should identify invalid dates', () => {
         const invalidDate = new Date('foo');
         const invalidDate1 = new Date('19-16-2011');

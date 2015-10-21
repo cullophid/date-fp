@@ -14,6 +14,12 @@ describe('set', function () {
       assert.deepEqual(set('seconds')(5)(date), set('seconds', 5, date));
   });
 
+    it('should return an error for an invalid time unit', function () {
+        const input = new Date('2015-01-02 11:22:33.123');
+        const errorMsg = set('foo', 0, input).message;
+        assert.equal(errorMsg, 'foo is not a valid date step');
+    });
+
   it('should not change the original date', function () {
       const input = new Date('2015-01-01 11:22:33.333');
       set('milliseconds', 0, input);

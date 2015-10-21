@@ -9,12 +9,12 @@ const setters = {
   'hours': (value, date) => date.setHours(value),
   'date': (value, date) => date.setDate(value),
   'month': (value, date) => date.setMonth(value - 1),
-  'year': (value, date) => date.setFullYear(value),
+  'year': (value, date) => date.setFullYear(value)
 };
 
 export default curry((step, value, date) => {
   if(!setters.hasOwnProperty(step)) {
-    return new Error(step + 'is not a valid date step');
+    return new Error(step + ' is not a valid date step');
   }
   let clone = new Date(date.getTime());
   setters[step](value, clone);

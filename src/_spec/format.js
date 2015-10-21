@@ -98,8 +98,16 @@ describe('format', function () {
     assert.equal(format('A', new Date('2015-03-04 22:08:05.023')), 'PM');
   });
 
+  it('A', function () {
+    assert.equal(format('A', new Date('2015-03-04 11:08:05.023')), 'AM');
+  });
+
   it('a', function () {
     assert.equal(format('a', new Date('2015-03-04 22:08:05.023')), 'pm');
+  });
+
+  it('a', function () {
+    assert.equal(format('a', new Date('2015-03-04 11:08:05.023')), 'am');
   });
 
   it('SSS', function () {

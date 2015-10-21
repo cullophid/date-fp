@@ -8,6 +8,13 @@ describe('get', function () {
     assert.equal(get('seconds')(date), get('seconds', date));
   });
 
+  it('should return an error for an invalid time unit', function () {
+    const input = new Date('2015-01-02 11:22:33.123');
+    const errorMsg = get('foo', input).message;
+    assert.equal(errorMsg,
+        'Invalid Date property, must be one of milliseconds,seconds,minutes,hours,date,month,year.');
+  });
+
   it('should return the milliseconds', function () {
     const input = new Date('2015-01-02 11:22:33.123');
     const milliseconds = get('milliseconds', input);
