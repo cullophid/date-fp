@@ -25,8 +25,8 @@ All functions in **date-fp** are pure. For a function to be pure it must follow 
 1. Pure functions always produce the same output given the same input.
 2. Pure functions have no side effects. This means that calling the function will not affect the world outside the function.
 
-A consequence of this is that `date-fp` will never knowingly throw an error upon receiving invalid input but it will _return_ one. Inspect the
-type signatures of `date-fp`'s functions to find out which functions behave in this manner.
+A consequence of this is that **date-fp** will never knowingly throw an error upon receiving invalid input but it will _return_ one. Inspect the
+type signatures of **date-fp**'s functions to find out which functions behave in this manner.
 
 ### Immutability
 Dates in **date-fp** are never mutated. All operations that modify a date return a copy with the given changes and leave the original date object intact.
