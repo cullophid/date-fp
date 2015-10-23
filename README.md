@@ -14,22 +14,25 @@ There are several excellent JavaScript libraries for managing dates in JavaScrip
 *Also check out [Ramda.js](http://ramdajs.com/0.17/index.html) (A great library for functional programming with JavaScript)*
 
 ## Key concepts
-All functions in **date-fp** follows a set of functional programming principles.
+All functions in **date-fp** follow a set of functional programming principles.
 
 ### Generic Date objects
-**date-fp** operates on normal JavaScript date objects. There are no wrapper objects, and **date-fp** doest not extend or mutate any native JavaScript objects. Among other things this means that you can still use normal comparison operators like `<` and `>`.
+**date-fp** operates on normal JavaScript date objects. There are no wrapper objects and **date-fp** does not extend or mutate any native JavaScript objects. Among other things this means that you can still use normal comparison operators like `<` and `>`.
 
 ### Purity
 All functions in **date-fp** are pure. For a function to be pure it must follow two basic rules.
 
-1. Pure function always produce the same output given the same input.
+1. Pure functions always produce the same output given the same input.
 2. Pure functions have no side effects. This means that calling the function will not affect the world outside the function.
 
+A consequence of this is that `date-fp` will never knowingly throw an error upon receiving invalid input but it will _return_ one. Inspect the
+type signatures of `date-fp`'s functions to find out which functions behave in this manner.
+
 ### Immutability
-Dates in **date-fp** are never mutated. All operations that modifies a date returns a copy with the given changes, and leaves the original date object intact and unchanged.
+Dates in **date-fp** are never mutated. All operations that modify a date return a copy with the given changes and leave the original date object intact.
 
 ### Currying
-All functions in **date-fp** uses automatic currying. This allows easy partial application of **date-fp** functions. For more information on currying read: [Why Curry Helps](https://web.archive.org/web/20140714014530/http://hughfdjackson.com/javascript/why-curry-helps)
+All functions in **date-fp** use automatic currying, which allows for easy partial application. For more information on currying read: [Why Curry Helps](https://web.archive.org/web/20140714014530/http://hughfdjackson.com/javascript/why-curry-helps)
 
 ### Composition
 Functions in **date-fp** take the data (usually a date object) as the last parameter. This, combined with currying, allows for easy function composition.
@@ -45,7 +48,7 @@ tomorrowAsString(new Date('2015-01-01')); // '2015-01-02';
 ### parse
 `String -> Date`
 
-Returns a new date from the given datestring
+Returns a new date from the given datestring.
 
 ```js
 const date = D.parse('2015-01-01') // Thu Jan 01 2015 00:00:00 GMT+0000 (GMT)
@@ -54,7 +57,7 @@ const date = D.parse('2015-01-01') // Thu Jan 01 2015 00:00:00 GMT+0000 (GMT)
 ### clone
 `Date -> Date`
 
-Returns a copy of the given date
+Returns a copy of the given date.
 
 ```js
 const date = D.clone(new Date('2015-01-01')); // Thu Jan 01 2015 00:00:00 GMT+0000 (GMT)
@@ -74,9 +77,9 @@ D.isValid(d1); // true
 ```
 
 ### get
-`String -> Date -> Date`
+`String -> Date -> Date | Error`
 
-Returns the chosen portion of a date
+Returns the chosen portion of a date. Returns an error if the provided unit of time is not valid.
 
 ```js
 const date = new Date('2015-01-02 11:22:33.444')
@@ -95,7 +98,7 @@ D.get('year', date); // 2015
 
 Returns the time since the Unix epoch, in the specified unit (milliseconds, seconds, minutes, hours, days),
 of the supplied Javascript date object.
-Returns an error if the Javascript date object is not valid.
+Returns an error if the unit of time or Javascript date object is not valid.
 
 ```js
 const date = new Date('2015-10-16T00:00:00+00:00')
@@ -118,7 +121,7 @@ D.unixTime(date) // 1444996800
 ```
 
 ### set
-`String -> Number -> Date -> Date`
+`String -> Number -> Date -> Date | Error`
 
 Returns a clone of the supplied date with the specified modification.
 Returns an Error if the modification results in an invalid date.
@@ -135,7 +138,7 @@ D.set('years', 2001, date);
 ```
 
 ### add
-`String -> Number -> Date -> Date`
+`String -> Number -> Date -> Date | Error`
 
 Returns a clone of the supplied date with the specified modification.
 Returns an Error if the modification results in an invalid date.
@@ -153,7 +156,7 @@ D.add('years', 2001, date);
 ```
 
 ### sub
-`String -> Number -> Date -> Date`
+`String -> Number -> Date -> Date | Error`
 
 Returns a clone of the supplied date with the specified modification.
 Returns an Error if the modification results in an invalid date.
@@ -170,7 +173,7 @@ D.sub('year', 2001, date);
 
 ```
 
-### equal
+### equals
 `Date -> Date -> bool | Error`
 
 Uses value equality to determine if the two supplied dates are the same.
@@ -184,7 +187,7 @@ D.equals(date, new Date('2014-01-01')); //false
 
 ### diff
 
-`String -> Date -> Date -> Number`
+`String -> Date -> Date -> Number | Error`
 
 Returns the difference between two dates.
 Returns an Error if given an invalid date unit.
