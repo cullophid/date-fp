@@ -96,7 +96,8 @@ D.get('year', date); // 2015
 ### isLeapYear
 `Date -> bool | Error`
 
-Verifies if the year of the date object supplied is a leap year.
+Verifies if the year of the date object supplied is a leap year. Returns an error if
+the date object is invalid.
 
 ```js
 D.isLeapYear(new Date('2015-01-01') // false
