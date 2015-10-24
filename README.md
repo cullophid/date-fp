@@ -93,6 +93,16 @@ D.get('year', date); // 2015
 
 ```
 
+### isLeapYear
+`Date -> bool | Error`
+
+Verifies if the year of the date object supplied is a leap year.
+
+```js
+D.isLeapYear(new Date('2015-01-01') // false
+D.isLeapYear(new Date('2004-01-01') // true
+```
+
 ### convertTo
 `String -> Date -> Number | Error`
 

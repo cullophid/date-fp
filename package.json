@@ -1,6 +1,6 @@
 {
   "name": "date-fp",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "Functional programming date management.",
   "main": "build/date-fp.js",
   "dependencies": {
