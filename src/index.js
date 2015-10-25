@@ -3,6 +3,7 @@ import parse from './parse';
 import get from './get';
 import equals from './equals';
 import diff from './diff';
+import isLeapYear from './isLeapYear';
 import format from './format';
 import set from './set';
 import add from './add';
@@ -22,6 +23,7 @@ export default {
   diff,
   format,
   get,
+  isLeapYear,
   parse,
   set,
   sub,
