@@ -13,3 +13,7 @@ export const find = curry((f, array) => {
     return validDates.length === 0 ? new Error('No valid dates provided.') :
         new Date(validDates.reduce((memo, date) => f(memo, date)));
 });
+
+export const validate = dates => dates.filter(isValid).length === dates.length;
+
+export const check = (dates, f, ...args) => validate(dates) ? f(...args) : new Error('Invalid date object(s) provided.');

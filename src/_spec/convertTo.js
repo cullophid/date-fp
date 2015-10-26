@@ -15,7 +15,7 @@ describe('convertTo', () => {
     });
 
     it('should return an error for invalid dates', () => {
-        assert.equal(convertTo('seconds', new Date('foo')).message, 'Invalid date object provided.');
+        assert.equal(convertTo('seconds', new Date('foo')).message, 'Invalid date object(s) provided.');
     });
 
     it('should return the time in milliseconds for valid dates', () => {

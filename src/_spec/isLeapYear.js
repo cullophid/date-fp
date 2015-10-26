@@ -5,7 +5,7 @@ import isLeapYear from '../isLeapYear';
 describe('isLeapYear', () => {
 
     it('should return an error for an invalid date', () => {
-        assert.equal(isLeapYear(new Date('2015-33-33')).message, 'Invalid date object provided.');
+        assert.equal(isLeapYear(new Date('2015-33-33')).message, 'Invalid date object(s) provided.');
     });
 
     it('should return false for non leap years', () => {

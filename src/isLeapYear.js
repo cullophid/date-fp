@@ -1,8 +1,7 @@
 'use strict';
 import curry from 'lodash.curry';
-import isValid from './isValid';
+import {check} from './helpers/util';
 
-export default curry((date) => {
-    return isValid(date) ? new Date(date.getFullYear() + '-02-29').getMonth() === 1 :
-        new Error('Invalid date object provided.');
-});
+const isLeapYear = date => new Date(date.getFullYear() + '-02-29').getMonth() === 1;
+
+export default curry((date) => check([date], isLeapYear, date));
