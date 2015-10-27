@@ -23,8 +23,8 @@ describe('max', () => {
     });
 
     it('should return an error when passed only invalid dates', () => {
-        assert.equal(max([]).message, 'No valid dates provided.');
-        assert.equal(max([invalidDate, invalidDate1]).message, 'No valid dates provided.');
+        assert.equal(max([]).message, 'Invalid date object(s) provided.');
+        assert.equal(max([invalidDate, invalidDate1]).message, 'Invalid date object(s) provided.');
     });
 
 });

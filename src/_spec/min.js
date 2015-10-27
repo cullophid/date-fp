@@ -23,8 +23,8 @@ describe('min', () => {
     });
 
     it('should return an error when passed only invalid dates', () => {
-        assert.equal(min([]).message, 'No valid dates provided.');
-        assert.equal(min([invalidDate, invalidDate1]).message, 'No valid dates provided.');
+        assert.equal(min([]).message, 'Invalid date object(s) provided.');
+        assert.equal(min([invalidDate, invalidDate1]).message, 'Invalid date object(s) provided.');
     });
 
 });
