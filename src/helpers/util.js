@@ -9,7 +9,10 @@ export const firstN = curry((n, str) => str.substring(0, n));
 export const fill = curry((digits, n) => lastN(digits, ZEROS + n));
 
 export const find = curry((f, array) => {
-    let validDates = array.filter(isValid);
-    return validDates.length === 0 ? new Error('No valid dates provided.') :
-        new Date(validDates.reduce((memo, date) => f(memo, date)));
+    let filtered = array.filter(isValid);
+    return check(filtered, dates => new Date(dates.reduce((memo, date) => f(memo, date))), filtered)
 });
+
+export const validate = dates => dates.length > 0 && dates.filter(isValid).length === dates.length;
+
+export const check = (dates, f, ...args) => validate(dates) ? f(...args) : new Error('Invalid date object(s) provided.');
