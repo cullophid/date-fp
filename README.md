@@ -218,13 +218,13 @@ D.diff('years', date1, new Date('2015-04-01 11:12:13.123')); // 1
 
 `[Date] -> Date | Error`
 
-Takes an array of dates and returns the oldest one. Ignores invalid Javascript date objects and returns 
+Takes an array of dates and returns the oldest one. Ignores invalid Javascript date objects and returns
 an error if no valid date objects are provided.
 
 ```js
 const date1 = new Date('2015-01-01 11:22:33.333');
 const date2 = new Date('2014-04-09 01:22:33.333');
-const invalidDate = new Date('foo'); 
+const invalidDate = new Date('foo');
 
 D.min([date1, date2]); // date2
 D.min([date1, date2, invalidDate]); // date2
@@ -235,13 +235,13 @@ D.min([invalidDate]); // Error
 
 `[Date] -> Date | Error`
 
-Takes an array of dates and returns the latest one. Ignores invalid Javascript date objects and returns 
+Takes an array of dates and returns the latest one. Ignores invalid Javascript date objects and returns
 an error if no valid date objects are provided.
 
 ```js
 const date1 = new Date('2015-01-01 11:22:33.333');
 const date2 = new Date('2014-04-09 01:22:33.333');
-const invalidDate = new Date('foo'); 
+const invalidDate = new Date('foo');
 
 D.max([date1, date2]); // date1
 D.max([date1, date2, invalidDate]); // date1
@@ -291,6 +291,7 @@ D.format('MMMM D YYYY', date); // 'January 2 2015'
 |Fractional Second| SSS   | 001... 999          |
 |                 | SS    | 01... 99            |
 |                 | S     | 1... 9              |
+|Quarter of Year  | Q     | 1... 4              |
 
 ## Credit
 Thanks to John-David Dalton for [`lodash.curry`](https://www.npmjs.com/package/lodash.curry)
