@@ -122,6 +122,13 @@ describe('format', function () {
     assert.equal(format('S', date), '0');
   });
 
+  it('Q', function () {
+    assert.equal(format('Q', date), '1');
+  });
+
+  it('Q', function () {
+    assert.equal(format('Q', new Date('2015-10-01')), '4');
+  });
 
 
 });

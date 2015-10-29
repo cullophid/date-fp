@@ -28,13 +28,14 @@ const tokenFunctions = {
   a:    d => d.getHours() > 11 ? 'pm': 'am',
   SSS:  d => fill(3, d.getMilliseconds()),
   SS:   d => firstN(2, fill(3, d.getMilliseconds())),
-  S:    d => firstN(1, fill(3, d.getMilliseconds()))
+  S:    d => firstN(1, fill(3, d.getMilliseconds())),
+  Q:    d => Math.ceil((d.getMonth() + 1) / 3),
 };
 
-const swapTokenWithValue = curry((date, token) => tokenFunctions[token] ? tokenFunctions[token](date): token);
+const swapTokenWithValue = curry((date, token) => tokenFunctions[token] ? tokenFunctions[token](date) : token);
 
 export default curry((format, date) => {
-    return format.match(DATE_TOKENS)
-      .map(swapTokenWithValue(date))
-      .join('');
+  return format.match(DATE_TOKENS)
+    .map(swapTokenWithValue(date))
+    .join('');
 });
