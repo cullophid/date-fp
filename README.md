@@ -299,3 +299,5 @@ Thanks to the team behind [Ramda.js](https://github.com/ramda/ramda) and [moment
 
 ## Contributing
 Yes please!
+
+Something to note is that automatically we release to NPM on every successful commit and we also strictly follow SemVer so please update the version number in `package.json` appropriately when submitting a Pull Request.
