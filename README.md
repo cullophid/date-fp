@@ -64,7 +64,7 @@ const date = D.clone(new Date('2015-01-01')); // Thu Jan 01 2015 00:00:00 GMT+00
 ```
 
 ### isValid
-`Date -> bool`
+`Date -> Boolean`
 
 Verifies if a specific Javascript date object is valid.
 
@@ -94,7 +94,7 @@ D.get('year', date); // 2015
 ```
 
 ### isLeapYear
-`Date -> bool | Error`
+`Date -> Boolean | Error`
 
 Verifies if the year of the date object supplied is a leap year. Returns an error if
 the date object is invalid.
@@ -185,7 +185,7 @@ D.sub('year', 2001, date);
 ```
 
 ### equals
-`Date -> Date -> bool | Error`
+`Date -> Date -> Boolean | Error`
 
 Uses value equality to determine if the two supplied dates are the same.
 Returns an error if any of the date objects are invalid.
