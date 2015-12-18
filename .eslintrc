@@ -176,7 +176,9 @@
     quotes: 0                      # - specify whether backticks, double or single quotes should be used (fixable)
     require-jsdoc: 1               # - Require JSDoc comment
     semi-spacing: 1                # - enforce spacing before and after semicolons
-    semi: 1                        # - require or disallow use of semicolons instead of ASI (fixable)
+    semi:                          # - require or disallow use of semicolons instead of ASI (fixable)
+      - 1
+      - never
     sort-vars: 1                   # - sort variables within the same declaration block
     space-after-keywords: 1        # - require a space after certain keywords (fixable)
     space-before-keywords: 1       # - require a space before certain keywords (fixable)
@@ -191,8 +193,8 @@
 
     #ES6
     arrow-parens:             # - require parens in arrow function arguments
-      - 2
-      - "as-needed"
+      - 1
+      - always
     arrow-spacing: 2          # - require space before/after arrow function's arrow (fixable)
     constructor-super: 2      # - verify calls of super() in constructors
     generator-star-spacing: 2 # - enforce spacing around the * in generator functions (fixable)
