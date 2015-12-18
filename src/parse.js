@@ -1,7 +1,7 @@
-/* eslint no-console:0 */
+/* eslint no-undefined:0 */
 import curry from 'lodash.curry'
 import {DATE_TOKENS, MONTHS} from './helpers/constants'
-import {fromPairs, compose} from './helpers/util'
+import {fromPairs} from './helpers/util'
 
 const _findMonth = curry((list, key) => {
   const _key = key.slice(0, 3).toLowerCase()
@@ -10,11 +10,13 @@ const _findMonth = curry((list, key) => {
 })
 
 const findMonth = _findMonth(MONTHS)
+const century = () =>
+  Math.floor(new Date().getFullYear() / 100) * 100
 
 const parsers = {
   'YYYY': ['year', /\d{4}/, Number],
-  'YY': ['year', /\d{2}/, (n) => Number(n) + 2000],
-  'Y': ['year', /\d{1,2}/, (n) => Number(n) + 2000],
+  'YY': ['year', /\d{2}/, (n) => Number(n) + century()],
+  'Y': ['year', /\d{1,2}/, (n) => Number(n) + century()],
   'MMMM': ['month', /[a-zA-Z]{3,9}/, findMonth],
   'MMM': ['month', /[a-zA-Z]{3}/, findMonth],
   'MM': ['month', /\d{2}/, Number],
@@ -38,9 +40,7 @@ const parseDate = (result, datestring, syntax) => {
   const touple = syntax[0]
   let newstring = datestring
 
-  if (syntax.length === 0) {
-    return result
-  }
+  if (syntax.length === 0) return result
 
   if (Array.isArray(touple)) {
     result.push([touple[0], datestring.match(touple[1])[0], touple[2]])
@@ -53,15 +53,7 @@ const constuctDateMap = (dateparts) =>
     .map((touple) => [touple[0], touple[2](touple[1])]))
 
 const validateDate = (date, parts) => {
-  const current = [
-    date.getFullYear(),
-    date.getMonth(),
-    date.getDate(),
-    date.getHours(),
-    date.getMinutes(),
-    date.getSeconds(),
-    date.getMilliseconds(),
-  ]
+
   if (
    (date.getFullYear() !== parts[0]) ||
    (date.getMonth() !== parts[1]) ||
@@ -70,9 +62,7 @@ const validateDate = (date, parts) => {
    (date.getMinutes() !== parts[4]) ||
    (date.getSeconds() !== parts[5]) ||
    (date.getMilliseconds() !== parts[6])
- ) {
-    return new Error('Invalid Date')
-  }
+ ) return new Date(undefined)
   return date
 }
 const constructDate = (d) => {

@@ -20,6 +20,14 @@ describe('parse', () => {
 
     assert.equal(actual, expected)
   })
+  it('should parse DD/MM/YY', () => {
+    const datestring = '01/12/14'
+    const pattern = 'DD/MM/YY'
+    const actual = parse(pattern, datestring).toString()
+    const expected = new Date('2014-12-01').toString()
+
+    assert.equal(actual, expected)
+  })
 
   it('should parse MMMM Do, YYYY', () => {
     const datestring = 'July 5th, 2013'
