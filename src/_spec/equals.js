@@ -6,16 +6,16 @@ describe('equals', () => {
   const date = new Date('2011-06-19 18:40:33.333')
   const invalidDate = new Date('foo')
 
-  it('should return an Error when given two invalid dates', () => {
-    assert.equal(equals(invalidDate, new Date('bar')).message, 'Invalid date object(s) provided.')
+  it('should return false when given two invalid dates', () => {
+    assert.equal(equals(invalidDate, new Date('bar')), false)
   })
 
-  it('should return an Error for a date and an invalid date', () => {
-    assert.equal(equals(date, new Date('bar')).message, 'Invalid date object(s) provided.')
+  it('should return false for a date and an invalid date', () => {
+    assert.equal(equals(date, new Date('bar')), false)
   })
 
-  it('should return an Error for an invalid date and an invalid date', () => {
-    assert.equal(equals(new Date('bar'), date).message, 'Invalid date object(s) provided.')
+  it('should return an Error for an invalid date and a valid date', () => {
+    assert.equal(equals(new Date('bar'), date), false)
   })
 
   it('should return false for different dates', () => {

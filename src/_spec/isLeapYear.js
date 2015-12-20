@@ -2,8 +2,8 @@ import assert from 'assert'
 import isLeapYear from '../isLeapYear'
 
 describe('isLeapYear', () => {
-  it('should return an error for an invalid date', () => {
-    assert.equal(isLeapYear(new Date('2015-33-33')).message, 'Invalid date object(s) provided.')
+  it('should return false when given an invalid date', () => {
+    assert.equal(isLeapYear(new Date('2015-33-33')), false)
   })
 
   it('should return false for non leap years', () => {

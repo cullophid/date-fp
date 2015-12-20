@@ -2,8 +2,8 @@ import assert from 'assert'
 import unixTime from '../unixTime'
 
 describe('unixTime', () => {
-  it('should return an error for invalid dates', () => {
-    assert.equal(unixTime(new Date('foo')).message, 'Invalid date object(s) provided.')
+  it('should return an NaN for invalid dates', () => {
+    assert.equal(isNaN(unixTime(new Date('foo'))), true)
   })
 
   it('should return the time in seconds for valid dates', () => {

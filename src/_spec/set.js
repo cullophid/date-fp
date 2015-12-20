@@ -1,5 +1,6 @@
 import assert from 'assert'
 import set from '../set'
+import isValid from '../isValid'
 
 describe('set', () => {
   it('should return a new date', () => {
@@ -17,9 +18,9 @@ describe('set', () => {
 
   it('should return an error for an invalid time unit', () => {
     const input = new Date('2015-01-02 11:22:33.123')
-    const errorMsg = set('foo', 0, input).message
+    const actual = set('foo', 0, input)
 
-    assert.equal(errorMsg, 'foo is not a valid date step')
+    assert.equal(isValid(actual), false)
   })
 
   it('should not change the original date', () => {
@@ -68,7 +69,7 @@ describe('set', () => {
     const input = new Date('2015-02-01 11:22:33.333')
     const actual = set('date', 30, input)
 
-    assert.equal(actual.toString(), 'Error: Invalid value for date')
+    assert.equal(isValid(actual), false)
   })
 
   it('should work for month', () => {
@@ -82,7 +83,7 @@ describe('set', () => {
     const input = new Date('2015-02-01 11:22:33.333')
     const actual = set('month', 13, input)
 
-    assert.equal(actual.toString(), 'Error: Invalid value for month')
+    assert.equal(isValid(actual), false)
   })
 
   it('should work for year', () => {

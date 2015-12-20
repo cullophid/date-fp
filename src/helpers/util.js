@@ -3,12 +3,14 @@ import isValid from '../isValid'
 
 const ZEROS = '00000000'
 
+export const every = curry((f, list) => list.reduce((r, e) => r && f(e), true))
+export const any = curry((f, list) => list.reduce((r, e) => r || f(e), false))
 export const lastN = curry((n, str) => str.substring(str.length - n, str.length))
 export const firstN = curry((n, str) => str.substring(0, n))
 export const fill = curry((digits, n) => lastN(digits, ZEROS + n))
 
 export const validate = (dates) => dates.length > 0 && dates.filter(isValid).length === dates.length
-export const check = (dates, f, ...args) => validate(dates) ? f(...args) : new Error('Invalid date object(s) provided.')
+export const check = (dates, f, ...args) => validate(dates) ? f(...args) : new Date(undefined)
 export const find = curry((f, array) => {
   const filtered = array.filter(isValid)
 

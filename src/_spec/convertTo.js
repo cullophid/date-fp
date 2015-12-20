@@ -11,11 +11,11 @@ describe('convertTo', () => {
   })
 
   it('should return an error for invalid units', () => {
-    assert.equal(isValid(convertTo('foo', date)), false)
+    assert.equal(isNaN(convertTo('foo', date)), true)
   })
 
   it('should return an error for invalid dates', () => {
-    assert.equal(isValid(convertTo('seconds', new Date('foo'))), false)
+    assert.equal(isNaN(convertTo('seconds', new Date('foo'))), true)
   })
 
   it('should return the time in milliseconds for valid dates', () => {

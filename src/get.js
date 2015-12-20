@@ -10,8 +10,6 @@ const getters = {
 }
 
 export default curry((prop, date) => {
-  if (!getters.hasOwnProperty(prop)) {
-    return new Date(undefined)
-  }
+  if (!getters.hasOwnProperty(prop)) return NaN
   return getters[prop](date)
 })

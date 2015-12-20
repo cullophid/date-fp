@@ -10,10 +10,8 @@ describe('get', () => {
 
   it('should return an error for an invalid time unit', () => {
     const input = new Date('2015-01-02 11:22:33.123')
-    const errorMsg = get('foo', input).message
 
-    assert.equal(errorMsg,
-        'Invalid Date property, must be one of milliseconds,seconds,minutes,hours,date,month,year.')
+    assert(isNaN(get('foo', input)))
   })
 
   it('should return the milliseconds', () => {
