@@ -1,5 +1,6 @@
 import assert from 'assert'
 import convertTo from '../convertTo'
+import isValid from '../isValid'
 
 describe('convertTo', () => {
 
@@ -10,15 +11,11 @@ describe('convertTo', () => {
   })
 
   it('should return an error for invalid units', () => {
-    assert.equal(
-      convertTo('foo', date).message,
-      'Unit provided must be one of milliseconds,seconds,minutes,hours,days.')
+    assert.equal(isValid(convertTo('foo', date)), false)
   })
 
   it('should return an error for invalid dates', () => {
-    assert.equal(
-      convertTo('seconds', new Date('foo')).message,
-      'Invalid date object(s) provided.')
+    assert.equal(isValid(convertTo('seconds', new Date('foo'))), false)
   })
 
   it('should return the time in milliseconds for valid dates', () => {

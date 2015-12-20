@@ -1,5 +1,6 @@
 import assert from 'assert'
 import diff from '../diff'
+import isValid from '../isValid'
 const date1 = new Date('2013-01-02 11:22:33.123')
 
 describe('diff', () => {
@@ -12,8 +13,8 @@ describe('diff', () => {
   it('should return an error if given an invalid unit', () => {
     const date2 = new Date('2013-01-02 11:22:33.223')
 
-    assert.deepEqual(diff('invalid', date1, date2), new Error('Invalid date unit'))
-    assert.equal(diff('invalid', date1, date2).message, 'Invalid date unit')
+    assert.deepEqual(isValid(diff('invalid', date1, date2)), false)
+    assert.equal(isValid(diff('invalid', date1, date2)), false)
   })
 
   it('milliseconds', () => {

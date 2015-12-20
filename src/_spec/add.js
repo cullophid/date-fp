@@ -1,5 +1,6 @@
 import assert from 'assert'
 import add from '../add'
+import isValid from '../isValid'
 const SECOND = 1000
 const MINUTE = 60 * SECOND
 const HOUR = 60 * MINUTE
@@ -57,20 +58,19 @@ describe('add', () => {
   it('should work for months', () => {
     const actual = add('months', 1, new Date(0))
 
-    assert.equal(1, actual.getMonth());
+    assert.equal(1, actual.getMonth())
   })
 
   it('should return an error if the result is invalid', () => {
     const actual = add('months', 1, new Date('2015-01-30'))
 
-    assert.equal(actual.toString(), 'Error: Invalid date')
+    assert.equal(isValid(actual), false, 'should return an invalid date')
   })
 
   it('should return an error if the unit of time is invalid', () => {
-    const actual = add('foo', 1, new Date('2015-01-30')).message
+    const actual = add('foo', 1, new Date('2015-01-30'))
 
-    assert.equal(actual,
-        'Unit is invalid, must be one of milliseconds,seconds,minutes,hours,days,months,years. Got: foo')
+    assert.equal(isValid(actual), false)
   })
 
   it('should work for year', () => {

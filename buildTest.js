@@ -1,6 +1,5 @@
-'use strict';
-var assert = require('assert');
-var D = require('./');
+var assert = require('assert')
+var D = require('./')
 describe('test build', function () {
   it('should have all the functions available', function () {
     assert.deepEqual(Object.keys(D), [
