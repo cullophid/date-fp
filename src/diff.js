@@ -12,9 +12,7 @@ export default curry((unit, date1, date2) => {
       (get('month', date2) - get('month', date1))
   }
 
-  if (!DATE_UNITS[unit]) {
-    return Error('Invalid date unit')
-  }
+  if (!DATE_UNITS[unit]) return NaN
 
   return Math.round((date2 - date1) / DATE_UNITS[unit])
 })

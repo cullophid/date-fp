@@ -1,5 +1,7 @@
 import assert from 'assert'
 import max from '../max'
+import {checkDate} from '../helpers/util'
+import isValid from '../isValid'
 
 describe('max', () => {
 
@@ -21,9 +23,17 @@ describe('max', () => {
     assert.equal(max([invalidDate, maxDate1, maxDate2, date1, invalidDate1]).toString(), maxDate2.toString())
   })
 
-  it('should return an error when passed only invalid dates', () => {
-    assert.equal(max([]).message, 'Invalid date object(s) provided.')
-    assert.equal(max([invalidDate, invalidDate1]).message, 'Invalid date object(s) provided.')
+  it('should return an invalid date when passed no dates', () => {
+    const actual = max([])
+
+    assert(checkDate(actual))
+    assert.equal(isValid(actual), false)
+  })
+  it('should return an invalid date when passed no dates', () => {
+    const actual = max([invalidDate, invalidDate1])
+
+    assert(checkDate(actual))
+    assert.equal(isValid(actual), false)
   })
 
 })

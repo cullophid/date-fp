@@ -10,9 +10,7 @@ const getters = {
 }
 
 export default curry((prop, date) => {
-  if (!getters.hasOwnProperty(prop)) {
-    return new Error(`Invalid Date property, must be one of ${Object.keys(getters)}.`)
-  }
+  if (!getters.hasOwnProperty(prop)) return NaN
 
   return getters[prop](date)
 })

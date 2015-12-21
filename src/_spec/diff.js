@@ -1,4 +1,5 @@
 import assert from 'assert'
+import {checkNaN} from '../helpers/util'
 import diff from '../diff'
 const date1 = new Date('2013-01-02 11:22:33.123')
 
@@ -9,11 +10,10 @@ describe('diff', () => {
     assert.equal(diff('milliseconds')(date1)(date2), diff('milliseconds', date1, date2))
   })
 
-  it('should return an error if given an invalid unit', () => {
+  it('should return NaN when given an invalid unit', () => {
     const date2 = new Date('2013-01-02 11:22:33.223')
 
-    assert.deepEqual(diff('invalid', date1, date2), new Error('Invalid date unit'))
-    assert.equal(diff('invalid', date1, date2).message, 'Invalid date unit')
+    assert(checkNaN(diff('invalid', date1, date2)))
   })
 
   it('milliseconds', () => {

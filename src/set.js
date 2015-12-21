@@ -12,13 +12,11 @@ const setters = {
 }
 
 export default curry((step, value, date) => {
-  if (!setters.hasOwnProperty(step)) return new Error(`${step} is not a valid date step`)
+  if (!setters.hasOwnProperty(step)) return new Date('invalid')
 
   const clone = new Date(date.getTime())
 
   setters[step](value, clone)
 
-  if (get(step, clone) !== value) return new Error(`Invalid value for ${step}`)
-
-  return clone
+  return (get(step, clone) === value) ? clone : new Date('invalid')
 })

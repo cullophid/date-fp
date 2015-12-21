@@ -1,6 +1,8 @@
 /* eslint max-statements:0 */
 import assert from 'assert'
 import add from '../add'
+import isValid from '../isValid'
+import {checkDate} from '../helpers/util'
 const SECOND = 1000
 const MINUTE = 60 * SECOND
 const HOUR = 60 * MINUTE
@@ -61,10 +63,11 @@ describe('add', () => {
     assert.equal(1, actual.getMonth())
   })
 
-  it('should return an error if the result is invalid', () => {
+  it('should return an invalid date if the result is invalid', () => {
     const actual = add('months', 1, new Date('2015-01-30'))
 
-    assert.equal(actual.toString(), 'Error: Invalid date')
+    assert(checkDate(actual))
+    assert(!isValid(actual))
   })
 
   it('should return an error if the unit of time is invalid', () => {
