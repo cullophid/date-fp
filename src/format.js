@@ -1,6 +1,7 @@
 import curry from 'lodash.curry'
 import {DATE_TOKENS, WEEKDAYS, MONTHS} from './helpers/constants'
 import {fill, firstN, lastN} from './helpers/util'
+import isValid from './isValid'
 
 const tokenFunctions = {
   YYYY: d => fill(4, d.getFullYear()),
@@ -34,6 +35,8 @@ const tokenFunctions = {
 const swapTokenWithValue = curry((date, token) => tokenFunctions[token] ? tokenFunctions[token](date) : token)
 
 export default curry((format, date) => {
+  if (isValid(date) === false) return 'Invalid Date'
+
   return format.match(DATE_TOKENS)
     .map(swapTokenWithValue(date))
     .join('')

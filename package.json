@@ -1,6 +1,6 @@
 {
   "name": "date-fp",
-  "version": "1.6.5",
+  "version": "2.0.0",
   "description": "Functional programming date management.",
   "main": "build/date-fp.js",
   "dependencies": {
@@ -11,7 +11,7 @@
     "uglify": "uglifyjs build/date-fp.js -o build/date-fp.min.js --source-map build/date-fp.min.map -p relative",
     "build": "npm run webpack && npm run uglify",
     "test": "babel-node node_modules/.bin/isparta cover _mocha -- --compilers js:babel-register 'src/**/_spec/*.js'",
-    "posttest" :"istanbul check-coverage --branches 100",
+    "posttest": "istanbul check-coverage --branches 100",
     "testBuild": "mocha buildTest.js",
     "watch": "mocha --watch --compilers js:babel-register 'src/**/_spec/*.js'"
   },

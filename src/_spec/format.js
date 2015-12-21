@@ -15,6 +15,10 @@ describe('format', () => {
     assert.equal(format(str)(date), format(str, date))
   })
 
+  it('should return "invalid date" if given an invalid date', () => {
+    assert.equal(format('YYYY-MM-DD')(new Date('invalid')), 'Invalid Date')
+  })
+
   it('YYYY', () => {
     assert.equal(format('YYYY', date), '2015')
   })

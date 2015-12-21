@@ -1,4 +1,4 @@
-import curry from 'lodash.curry'
-import {find} from './helpers/util'
-
-export default curry(array => find(Math.max, array))
+import {find, any} from './helpers/util'
+import isValid from './isValid'
+export default dates =>
+  any(isValid, dates) ? find(Math.max, dates) : new Date('invalid')

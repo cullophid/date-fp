@@ -1,5 +1,6 @@
 import assert from 'assert'
 import convertTo from '../convertTo'
+import {checkNaN} from '../helpers/util'
 
 describe('convertTo', () => {
   const date = new Date('December 28, 1973')
@@ -8,14 +9,12 @@ describe('convertTo', () => {
     assert.equal(convertTo('milliseconds')(date), convertTo('milliseconds', date))
   })
 
-  it('should return an error for invalid units', () => {
-    assert.equal(
-      convertTo('foo', date).message,
-      'Unit provided must be one of milliseconds,seconds,minutes,hours,days.')
+  it('should return NaN for invalid units', () => {
+    assert(checkNaN(convertTo('foo', date)))
   })
 
-  it('should return an error for invalid dates', () => {
-    assert.equal(convertTo('seconds', new Date('foo')).message, 'Invalid date object(s) provided.')
+  it('should return NaN for invalid dates', () => {
+    assert(checkNaN(convertTo('seconds', new Date('foo'))))
   })
 
   it('should return the time in milliseconds for valid dates', () => {

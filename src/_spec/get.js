@@ -1,4 +1,5 @@
 import assert from 'assert'
+import {checkNaN} from '../helpers/util'
 import get from '../get'
 
 describe('get', () => {
@@ -8,12 +9,11 @@ describe('get', () => {
     assert.equal(get('seconds')(date), get('seconds', date))
   })
 
-  it('should return an error for an invalid time unit', () => {
+  it('should return NaN for an invalid time unit', () => {
     const input = new Date('2015-01-02 11:22:33.123')
-    const errorMsg = get('foo', input).message
+    const actual = get('foo', input)
 
-    assert.equal(errorMsg,
-        'Invalid Date property, must be one of milliseconds,seconds,minutes,hours,date,month,year.')
+    assert(checkNaN(actual))
   })
 
   it('should return the milliseconds', () => {

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import min from '../min'
-
+import isValid from '../isValid'
 describe('min', () => {
 
   const minDate1 = new Date('2015-01-01 11:22:33.333')
@@ -21,9 +21,15 @@ describe('min', () => {
     assert.equal(min([invalidDate, minDate1, minDate2, date1, invalidDate1]).toString(), minDate2.toString())
   })
 
-  it('should return an error when passed only invalid dates', () => {
-    assert.equal(min([]).message, 'Invalid date object(s) provided.')
-    assert.equal(min([invalidDate, invalidDate1]).message, 'Invalid date object(s) provided.')
+  it('should return an invalid date when passed no dates', () => {
+    const actual = min([])
+
+    assert.equal(isValid(actual), false)
+  })
+  it('should return an invalid date when passed no dates', () => {
+    const actual = min([invalidDate, invalidDate1])
+
+    assert.equal(isValid(actual), false)
   })
 
 })

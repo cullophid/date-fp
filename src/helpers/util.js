@@ -15,6 +15,7 @@ export const find = curry((f, array) => {
 
   return check(filtered, dates => new Date(dates.reduce((memo, date) => f(memo, date))), filtered)
 })
+export const any = curry((f, coll) => coll.reduce((r, e) => r || f(e), false))
 
 
 export const checkNaN = n => n !== n // NaN is the only number that is not equal to itself

@@ -1,6 +1,8 @@
 /* eslint max-statements:0 */
 import assert from 'assert'
 import set from '../set'
+import isValid from '../isValid'
+import {checkDate} from '../helpers/util'
 
 describe('set', () => {
   it('should return a new date', () => {
@@ -16,11 +18,12 @@ describe('set', () => {
     assert.deepEqual(set('seconds')(5)(date), set('seconds', 5, date))
   })
 
-  it('should return an error for an invalid time unit', () => {
+  it('should return an invalid date for an invalid time unit', () => {
     const input = new Date('2015-01-02 11:22:33.123')
-    const errorMsg = set('foo', 0, input).message
+    const actual = set('foo', 0, input)
 
-    assert.equal(errorMsg, 'foo is not a valid date step')
+    assert(checkDate(actual))
+    assert.equal(isValid(actual), false)
   })
 
   it('should not change the original date', () => {
@@ -65,11 +68,12 @@ describe('set', () => {
     assert.equal(actual.getDate(), 12)
   })
 
-  it('should return an error if given an invalid date', () => {
+  it('should return an invalid date if given an invalid date', () => {
     const input = new Date('2015-02-01 11:22:33.333')
     const actual = set('date', 30, input)
 
-    assert.equal(actual.toString(), 'Error: Invalid value for date')
+    assert(checkDate(actual))
+    assert.equal(isValid(actual), false)
   })
 
   it('should work for month', () => {
@@ -79,11 +83,12 @@ describe('set', () => {
     assert.equal(actual.getMonth() + 1, 12)
   })
 
-  it('should return an error if given an invalid month', () => {
+  it('should return an invalid date if given an invalid month', () => {
     const input = new Date('2015-02-01 11:22:33.333')
     const actual = set('month', 13, input)
 
-    assert.equal(actual.toString(), 'Error: Invalid value for month')
+    assert(checkDate(actual))
+    assert.equal(isValid(actual), false)
   })
 
   it('should work for year', () => {
