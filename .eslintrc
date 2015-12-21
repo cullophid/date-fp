@@ -196,7 +196,7 @@
     #ES6
     arrow-parens:             # - require parens in arrow function arguments
       - 1
-      - always
+      - as-needed
     arrow-spacing: 2          # - require space before/after arrow function's arrow (fixable)
     constructor-super: 2      # - verify calls of super() in constructors
     generator-star-spacing: 2 # - enforce spacing around the * in generator functions (fixable)

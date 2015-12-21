@@ -13,7 +13,7 @@ import isValid from './isValid'
 import convertTo from './convertTo'
 import unixTime from './unixTime'
 
-const clone = (date) => new Date(date.getTime())
+const clone = date => new Date(date.getTime())
 
 module.exports = {
   add,
