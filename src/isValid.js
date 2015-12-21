@@ -2,7 +2,7 @@
 import curry from 'lodash.curry'
 
 const checkNaN = n => {
-  return isNaN(n) && n !== n
+  return n !== n // NaN is the only number that is not equal to itself
 }
 
 export default curry(date => {
