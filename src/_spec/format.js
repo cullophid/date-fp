@@ -1,134 +1,133 @@
-'use strict';
-import assert from 'assert';
-import format from '../format';
+/* eslint max-statements: 0 */
+import assert from 'assert'
+import format from '../format'
 
-const date = new Date('2015-03-04 09:08:05.023');
-describe('format', function () {
-  it('complex date string', function () {
-    assert.equal(format('YYYY-MM-DD HH:mm:ss.SSS', new Date('2015-03-04 22:08:05.023')), '2015-03-04 22:08:05.023');
-  });
+const date = new Date('2015-03-04 09:08:05.023')
 
-  it('should be curried', function () {
-    const str = '2015-01-02';
-    assert.equal(format(str)(date), format(str, date));
-  });
+describe('format', () => {
+  it('complex date string', () => {
+    assert.equal(format('YYYY-MM-DD HH:mm:ss.SSS', new Date('2015-03-04 22:08:05.023')), '2015-03-04 22:08:05.023')
+  })
 
-  it('YYYY', function () {
-    assert.equal(format('YYYY', date), '2015');
-  });
+  it('should be curried', () => {
+    const str = '2015-01-02'
 
-  it('YY', function () {
-    assert.equal(format('YY', date), '15');
-  });
+    assert.equal(format(str)(date), format(str, date))
+  })
 
-  it('MMMM', function () {
-    assert.equal(format('MMMM', date), 'March');
-  });
+  it('YYYY', () => {
+    assert.equal(format('YYYY', date), '2015')
+  })
 
-  it('MMM', function () {
-    assert.equal(format('MMM', date), 'Mar');
-  });
+  it('YY', () => {
+    assert.equal(format('YY', date), '15')
+  })
 
-  it('MM', function () {
-    assert.equal(format('MM', date), '03');
-  });
+  it('MMMM', () => {
+    assert.equal(format('MMMM', date), 'March')
+  })
 
-  it('M', function () {
-    assert.equal(format('M', date), '3');
-  });
+  it('MMM', () => {
+    assert.equal(format('MMM', date), 'Mar')
+  })
 
-  it('DD', function () {
-    assert.equal(format('DD', date), '04');
-  });
+  it('MM', () => {
+    assert.equal(format('MM', date), '03')
+  })
 
-  it('D', function () {
-    assert.equal(format('D', date), '4');
-  });
+  it('M', () => {
+    assert.equal(format('M', date), '3')
+  })
 
+  it('DD', () => {
+    assert.equal(format('DD', date), '04')
+  })
 
-  it('dddd', function () {
-    assert.equal(format('dddd', date), 'Wednesday');
-  });
+  it('D', () => {
+    assert.equal(format('D', date), '4')
+  })
 
-  it('ddd', function () {
-    assert.equal(format('ddd', date), 'Wed');
-  });
+  it('dddd', () => {
+    assert.equal(format('dddd', date), 'Wednesday')
+  })
 
-  it('dd', function () {
-    assert.equal(format('dd', date), 'We');
-  });
+  it('ddd', () => {
+    assert.equal(format('ddd', date), 'Wed')
+  })
 
-  it('d', function () {
-    assert.equal(format('d', date), '3');
-  });
+  it('dd', () => {
+    assert.equal(format('dd', date), 'We')
+  })
 
-  it('HH', function () {
-    assert.equal(format('HH', date), '09');
-  });
+  it('d', () => {
+    assert.equal(format('d', date), '3')
+  })
 
-  it('H', function () {
-    assert.equal(format('H', date), '9');
-  });
+  it('HH', () => {
+    assert.equal(format('HH', date), '09')
+  })
 
-  it('hh', function () {
-    assert.equal(format('hh', new Date('2015-03-04 22:08:05.023')), '10');
-  });
+  it('H', () => {
+    assert.equal(format('H', date), '9')
+  })
 
-  it('h', function () {
-    assert.equal(format('h', date), '9');
-  });
+  it('hh', () => {
+    assert.equal(format('hh', new Date('2015-03-04 22:08:05.023')), '10')
+  })
 
-  it('mm', function () {
-    assert.equal(format('mm', date), '08');
-  });
+  it('h', () => {
+    assert.equal(format('h', date), '9')
+  })
 
-  it('m', function () {
-    assert.equal(format('m', date), '8');
-  });
+  it('mm', () => {
+    assert.equal(format('mm', date), '08')
+  })
 
-  it('ss', function () {
-    assert.equal(format('ss', date), '05');
-  });
+  it('m', () => {
+    assert.equal(format('m', date), '8')
+  })
 
-  it('s', function () {
-    assert.equal(format('s', date), '5');
-  });
+  it('ss', () => {
+    assert.equal(format('ss', date), '05')
+  })
 
-  it('A', function () {
-    assert.equal(format('A', new Date('2015-03-04 22:08:05.023')), 'PM');
-  });
+  it('s', () => {
+    assert.equal(format('s', date), '5')
+  })
 
-  it('A', function () {
-    assert.equal(format('A', new Date('2015-03-04 11:08:05.023')), 'AM');
-  });
+  it('A', () => {
+    assert.equal(format('A', new Date('2015-03-04 22:08:05.023')), 'PM')
+  })
 
-  it('a', function () {
-    assert.equal(format('a', new Date('2015-03-04 22:08:05.023')), 'pm');
-  });
+  it('A', () => {
+    assert.equal(format('A', new Date('2015-03-04 11:08:05.023')), 'AM')
+  })
 
-  it('a', function () {
-    assert.equal(format('a', new Date('2015-03-04 11:08:05.023')), 'am');
-  });
+  it('a', () => {
+    assert.equal(format('a', new Date('2015-03-04 22:08:05.023')), 'pm')
+  })
 
-  it('SSS', function () {
-    assert.equal(format('SSS', date), '023');
-  });
+  it('a', () => {
+    assert.equal(format('a', new Date('2015-03-04 11:08:05.023')), 'am')
+  })
 
-  it('SS', function () {
-    assert.equal(format('SS', date), '02');
-  });
+  it('SSS', () => {
+    assert.equal(format('SSS', date), '023')
+  })
 
-  it('S', function () {
-    assert.equal(format('S', date), '0');
-  });
+  it('SS', () => {
+    assert.equal(format('SS', date), '02')
+  })
 
-  it('Q', function () {
-    assert.equal(format('Q', date), '1');
-  });
+  it('S', () => {
+    assert.equal(format('S', date), '0')
+  })
 
-  it('Q', function () {
-    assert.equal(format('Q', new Date('2015-10-01')), '4');
-  });
+  it('Q', () => {
+    assert.equal(format('Q', date), '1')
+  })
 
-
-});
+  it('Q', () => {
+    assert.equal(format('Q', new Date('2015-10-01')), '4')
+  })
+})

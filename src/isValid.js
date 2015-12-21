@@ -1,8 +1,4 @@
-'use strict';
-import curry from 'lodash.curry';
+import {checkDate, checkNaN} from './helpers/util'
 
-export default curry((date) => {
-    if(Object.prototype.toString.call(date) !== "[object Date]") return false;
-    let unixTime = date.getTime();
-    return unixTime === unixTime;
-});
+export default date =>
+  checkDate(date) && checkNaN(date.getTime()) === false

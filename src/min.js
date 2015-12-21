@@ -1,5 +1,4 @@
-'use strict';
-import curry from 'lodash.curry';
-import {find} from './helpers/util';
+import curry from 'lodash.curry'
+import {find} from './helpers/util'
 
-export default curry((array) => find(Math.min, array));
+export default curry(array => find(Math.min, array))

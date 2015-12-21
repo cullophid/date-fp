@@ -46,7 +46,9 @@
     block-scoped-var: 1      # - treat var statements as if they were block scoped
     complexity: 1            # - specify the maximum cyclomatic complexity allowed in a program
     consistent-return: 1     # - require return statements to either always or never specify values
-    curly: 1                 # - specify curly brace conventions for all control statements
+    curly:                   # - specify curly brace conventions for all control statements
+      - 1
+      - multi-line
     default-case: 1          # - require default case in switch statements
     dot-notation: 1          # - encourages use of dot notation whenever possible
     dot-location:            # - enforces consistent newlines before or after dots
@@ -112,7 +114,7 @@
     no-shadow: 2                  # - disallow declaration of variables already declared in the outer scope
     no-undef-init: 2              # - disallow use of undefined when initializing variables
     no-undef: 2                   # - disallow use of undeclared variables unless mentioned in a /*global */ block (recommended)
-    no-undefined: 2               # - disallow use of undefined variable
+    no-undefined: 0               # - disallow use of undefined variable
     no-unused-vars: 2             # - disallow declaration of variables that are not used in the code (recommended)
     no-use-before-define: 2       # - disallow use of variables before they are defined
 
@@ -176,7 +178,9 @@
     quotes: 0                      # - specify whether backticks, double or single quotes should be used (fixable)
     require-jsdoc: 1               # - Require JSDoc comment
     semi-spacing: 1                # - enforce spacing before and after semicolons
-    semi: 1                        # - require or disallow use of semicolons instead of ASI (fixable)
+    semi:                          # - require or disallow use of semicolons instead of ASI (fixable)
+      - 1
+      - never
     sort-vars: 1                   # - sort variables within the same declaration block
     space-after-keywords: 1        # - require a space after certain keywords (fixable)
     space-before-keywords: 1       # - require a space before certain keywords (fixable)
@@ -191,8 +195,8 @@
 
     #ES6
     arrow-parens:             # - require parens in arrow function arguments
-      - 2
-      - "as-needed"
+      - 1
+      - as-needed
     arrow-spacing: 2          # - require space before/after arrow function's arrow (fixable)
     constructor-super: 2      # - verify calls of super() in constructors
     generator-star-spacing: 2 # - enforce spacing around the * in generator functions (fixable)
@@ -205,7 +209,7 @@
     prefer-arrow-callback: 2  # - suggest using arrow functions as callbacks
     prefer-const: 2           # - suggest using const declaration for variables that are never modified after declared
     prefer-spread: 2          # - suggest using the spread operator instead of .apply().
-    prefer-reflect: 2         # - suggest using Reflect methods where applicable
+    prefer-reflect: 0         # - suggest using Reflect methods where applicable
     prefer-template: 2        # - suggest using template literals instead of strings concatenation
     require-yield: 2          # - disallow generator functions that do not have yield
 

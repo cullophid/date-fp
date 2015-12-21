@@ -1,4 +1,3 @@
-'use strict';
-import convertTo from './convertTo';
+import convertTo from './convertTo'
 
-export default convertTo('seconds');
+export default convertTo('seconds')
