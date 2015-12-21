@@ -1,3 +1,4 @@
+/* eslint no-self-compare: 0*/
 import curry from 'lodash.curry'
 import isValid from '../isValid'
 
@@ -14,3 +15,9 @@ export const find = curry((f, array) => {
 
   return check(filtered, dates => new Date(dates.reduce((memo, date) => f(memo, date))), filtered)
 })
+
+
+export const checkNaN = n => n !== n // NaN is the only number that is not equal to itself
+
+export const checkDate = date =>
+  Object.prototype.toString.call(date) !== "[object Date]"
