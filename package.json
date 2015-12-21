@@ -27,6 +27,7 @@
     "eslint": "^1.7.1",
     "eslint-plugin-react": "^3.6.2",
     "isparta": "^4.0.0",
+    "istanbul": "^0.4.1",
     "mocha": "^2.3.3",
     "uglifyjs": "^2.4.10",
     "webpack": "^1.12.2"
