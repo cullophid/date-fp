@@ -20,4 +20,4 @@ export const find = curry((f, array) => {
 export const checkNaN = n => n !== n // NaN is the only number that is not equal to itself
 
 export const checkDate = date =>
-  Object.prototype.toString.call(date) !== "[object Date]"
+  Object.prototype.toString.call(date) === "[object Date]"
