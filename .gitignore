@@ -2,3 +2,4 @@ node_modules/
 dist/
 build/
 sandbox.js
+.DS_Store
