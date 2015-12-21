@@ -77,7 +77,7 @@ D.isValid(d1); // true
 ```
 
 ### get
-`String -> Date -> Date | Error`
+`String -> Date -> Date`
 
 Returns the chosen portion of a date. Returns an `Invalid Date` if the provided unit of time is not valid.
 
@@ -94,7 +94,7 @@ D.get('year', date); // 2015
 ```
 
 ### isLeapYear
-`Date -> Boolean | Error`
+`Date -> Boolean`
 
 Verifies if the year of the date object supplied is a leap year. Returns `false` if
 the date object is invalid.
@@ -105,7 +105,7 @@ D.isLeapYear(new Date('2004-01-01') // true
 ```
 
 ### convertTo
-`String -> Date -> Number | Error`
+`String -> Date -> Number`
 
 Returns the time since the Unix epoch, in the specified unit (milliseconds, seconds, minutes, hours, days),
 of the supplied Javascript date object.
@@ -121,7 +121,7 @@ D.convertTo('days', date) // 16724
 ```
 
 ### unixTime
-`Date -> Number | Error`
+`Date -> Number`
 
 Returns the time since the Unix epoch in seconds of the supplied Javascript date object
 Returns `NaN` if the Javascript date object is not valid.
@@ -132,7 +132,7 @@ D.unixTime(date) // 1444996800
 ```
 
 ### set
-`String -> Number -> Date -> Date | Error`
+`String -> Number -> Date -> Date`
 
 Returns a copy of the supplied date with the specified modification.
 Returns an `Invalid Date` if the modification results in an invalid date.
@@ -149,7 +149,7 @@ D.set('years', 2001, date);
 ```
 
 ### add
-`String -> Number -> Date -> Date | Error`
+`String -> Number -> Date -> Date`
 
 Returns a copy of the supplied date with the specified modification.
 Returns an `Invalid Date` if the modification results in an invalid date.
@@ -167,7 +167,7 @@ D.add('years', 2001, date);
 ```
 
 ### sub
-`String -> Number -> Date -> Date | Error`
+`String -> Number -> Date -> Date`
 
 Returns a copy of the supplied date with the specified modification.
 Returns an `Invalid Date` if the modification results in an invalid date.
@@ -185,7 +185,7 @@ D.sub('year', 2001, date);
 ```
 
 ### equals
-`Date -> Date -> Boolean | Error`
+`Date -> Date -> Boolean`
 
 Uses value equality to determine if the two supplied dates are the same.
 Returns `false` if any of the date objects are invalid.
@@ -198,7 +198,7 @@ D.equals(date, new Date('2014-01-01')); //false
 
 ### diff
 
-`String -> Date -> Date -> Number | Error`
+`String -> Date -> Date -> Number`
 
 Returns the difference between two dates.
 Returns `NaN` if given an invalid date unit.
@@ -216,7 +216,7 @@ D.diff('years', date1, new Date('2015-04-01 11:12:13.123')); // 1
 
 ### min
 
-`[Date] -> Date | Error`
+`[Date] -> Date`
 
 Takes an array of dates and returns the oldest one. Ignores invalid Javascript date objects and returns
 an `Invalid Date` if no valid date objects are provided.
@@ -233,7 +233,7 @@ D.min([invalidDate]); // Error
 
 ### max
 
-`[Date] -> Date | Error`
+`[Date] -> Date`
 
 Takes an array of dates and returns the latest one. Ignores invalid Javascript date objects and returns
 an `Invalid Date` if no valid date objects are provided.
