@@ -1,4 +1,5 @@
 import parse from './parse'
+import of from './of'
 import get from './get'
 import equals from './equals'
 import diff from './diff'
@@ -23,6 +24,7 @@ module.exports = {
   format,
   get,
   isLeapYear,
+  of,
   parse,
   set,
   sub,
