@@ -79,7 +79,7 @@ D.isValid(d1); // true
 ### get
 `String -> Date -> Date | Error`
 
-Returns the chosen portion of a date. Returns an error if the provided unit of time is not valid.
+Returns the chosen portion of a date. Returns an `Invalid Date` if the provided unit of time is not valid.
 
 ```js
 const date = new Date('2015-01-02 11:22:33.444')
@@ -96,7 +96,7 @@ D.get('year', date); // 2015
 ### isLeapYear
 `Date -> Boolean | Error`
 
-Verifies if the year of the date object supplied is a leap year. Returns an error if
+Verifies if the year of the date object supplied is a leap year. Returns `false` if
 the date object is invalid.
 
 ```js
@@ -109,7 +109,7 @@ D.isLeapYear(new Date('2004-01-01') // true
 
 Returns the time since the Unix epoch, in the specified unit (milliseconds, seconds, minutes, hours, days),
 of the supplied Javascript date object.
-Returns an error if the unit of time or Javascript date object is not valid.
+Returns `NaN` if the unit of time or Javascript date object is not valid.
 
 ```js
 const date = new Date('2015-10-16T00:00:00+00:00')
@@ -124,7 +124,7 @@ D.convertTo('days', date) // 16724
 `Date -> Number | Error`
 
 Returns the time since the Unix epoch in seconds of the supplied Javascript date object
-Returns an error if the Javascript date object is not valid.
+Returns `NaN` if the Javascript date object is not valid.
 
 ```js
 const date = new Date('2015-10-16T00:00:00+00:00')
@@ -134,8 +134,8 @@ D.unixTime(date) // 1444996800
 ### set
 `String -> Number -> Date -> Date | Error`
 
-Returns a clone of the supplied date with the specified modification.
-Returns an Error if the modification results in an invalid date.
+Returns a copy of the supplied date with the specified modification.
+Returns an `Invalid Date` if the modification results in an invalid date.
 
 ```js
 const date = new Date();
@@ -151,8 +151,8 @@ D.set('years', 2001, date);
 ### add
 `String -> Number -> Date -> Date | Error`
 
-Returns a clone of the supplied date with the specified modification.
-Returns an Error if the modification results in an invalid date.
+Returns a copy of the supplied date with the specified modification.
+Returns an `Invalid Date` if the modification results in an invalid date.
 
 ```js
 const date = new Date();
@@ -169,8 +169,8 @@ D.add('years', 2001, date);
 ### sub
 `String -> Number -> Date -> Date | Error`
 
-Returns a clone of the supplied date with the specified modification.
-Returns an Error if the modification results in an invalid date.
+Returns a copy of the supplied date with the specified modification.
+Returns an `Invalid Date` if the modification results in an invalid date.
 
 ```js
 const date = new Date();
@@ -188,7 +188,7 @@ D.sub('year', 2001, date);
 `Date -> Date -> Boolean | Error`
 
 Uses value equality to determine if the two supplied dates are the same.
-Returns an error if any of the date objects are invalid.
+Returns `false` if any of the date objects are invalid.
 
 ```js
 const date = new Date('2015-04-09');
@@ -201,7 +201,7 @@ D.equals(date, new Date('2014-01-01')); //false
 `String -> Date -> Date -> Number | Error`
 
 Returns the difference between two dates.
-Returns an Error if given an invalid date unit.
+Returns `NaN` if given an invalid date unit.
 
 ```js
 const date1 = new Date('2014-02-01 11:12:13.123');
@@ -219,7 +219,7 @@ D.diff('years', date1, new Date('2015-04-01 11:12:13.123')); // 1
 `[Date] -> Date | Error`
 
 Takes an array of dates and returns the oldest one. Ignores invalid Javascript date objects and returns
-an error if no valid date objects are provided.
+an `Invalid Date` if no valid date objects are provided.
 
 ```js
 const date1 = new Date('2015-01-01 11:22:33.333');
@@ -236,7 +236,7 @@ D.min([invalidDate]); // Error
 `[Date] -> Date | Error`
 
 Takes an array of dates and returns the latest one. Ignores invalid Javascript date objects and returns
-an error if no valid date objects are provided.
+an `Invalid Date` if no valid date objects are provided.
 
 ```js
 const date1 = new Date('2015-01-01 11:22:33.333');
@@ -251,7 +251,7 @@ D.max([invalidDate]); // Error
 ### format
 `String -> Date -> String`
 
-Returns a string representation of a date on the specified format
+Returns a string representation of a date on the specified format. Returns the string 'Invalid Date' if given an invalid date.
 
 ```js
 const date = new Date('2015-01-02 03:04:05.123');
