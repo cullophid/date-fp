@@ -15,7 +15,7 @@ import unixTime from './unixTime'
 
 const clone = (date) => new Date(date.getTime())
 
-export default {
+module.exports = {
   add,
   clone,
   equals,
