@@ -1,13 +1,30 @@
 'use strict';
 var assert = require('assert');
 var D = require('./');
-describe('test build', function () {
-  it('should have all the functions available', function () {
-    assert.deepEqual(Object.keys(D), [
-      'add', 'clone', 'equals', 'diff', 'format', 'get', 'isLeapYear', 'parse',
-      'set', 'sub', 'min', 'max', 'isValid', 'convertTo', 'unixTime'
-    ]);
-    Object.keys(D).forEach(function (key) {
+
+var FUNCTIONS = [
+  'add',
+  'clone',
+  'equals',
+  'diff',
+  'format',
+  'get',
+  'isLeapYear',
+  'of',
+  'parse',
+  'set',
+  'sub',
+  'min',
+  'max',
+  'isValid',
+  'convertTo',
+  'unixTime'
+]
+
+describe('test build', () => {
+  it('should have all the functions available', () => {
+    assert.deepEqual(Object.keys(D), FUNCTIONS);
+    Object.keys(D).forEach(key => {
       assert.equal(typeof D[key], 'function', key + 'should be a function');
     })
   });
