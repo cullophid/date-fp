@@ -45,15 +45,6 @@ tomorrowAsString(new Date('2015-01-01')); // '2015-01-02';
 
 ## API
 
-### of
-`String | [Number] | Void -> Date`
-
-Returns a new date from the given input. If no argument is given, the current date is returned. This function is just a thin wrapper around `new Date()`
-
-```js
-const date = D.of('2015-01-01') // Thu Jan 01 2015 00:00:00 GMT+0000 (GMT)
-```
-
 ### parse
 `String -> String -> Date`
 

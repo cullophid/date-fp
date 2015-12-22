@@ -24,7 +24,6 @@ module.exports = {
   format,
   get,
   isLeapYear,
-  of,
   parse,
   set,
   sub,

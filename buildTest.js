@@ -10,7 +10,6 @@ var FUNCTIONS = [
   'format',
   'get',
   'isLeapYear',
-  'of',
   'parse',
   'set',
   'sub',
