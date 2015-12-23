@@ -8,7 +8,7 @@ describe('parse', () => {
     const datestring = '2010-01-02'
     const pattern = 'YYYY-MM-DD'
     const actual = parse(pattern, datestring).toString()
-    const expected = new Date('2010-01-02').toString()
+    const expected = new Date(2010, 0, 2).toString()
 
     assert.equal(actual, expected)
   })
@@ -17,7 +17,7 @@ describe('parse', () => {
     const datestring = '01/12/2014'
     const pattern = 'DD/MM/YYYY'
     const actual = parse(pattern, datestring).toString()
-    const expected = new Date('2014-12-01').toString()
+    const expected = new Date(2014, 11, 1).toString()
 
     assert.equal(actual, expected)
   })
@@ -25,7 +25,7 @@ describe('parse', () => {
     const datestring = '01/12/14'
     const pattern = 'DD/MM/YY'
     const actual = parse(pattern, datestring).toString()
-    const expected = new Date('2014-12-01').toString()
+    const expected = new Date(2014, 11, 1).toString()
 
     assert.equal(actual, expected)
   })
@@ -53,6 +53,16 @@ describe('parse', () => {
 
     assert.equal(actual, expected)
   })
+
+
+  it('should return an invalid date if given a date before 100-01-01', () => {
+    const datestring = '0099-01-01'
+    const pattern = 'YYYY-MM-DD'
+    const actual = parse(pattern, datestring).toString()
+
+    assert.equal(isValid(actual), false)
+  })
+
   it('should return Invalid Date if given bad Month', () => {
     const datestring = '2015-13-01'
     const pattern = 'YYYY-MM-DD'

@@ -3,13 +3,13 @@ import curry from 'lodash.curry'
 import {DATE_TOKENS, MONTHS} from './helpers/constants'
 import {fromPairs} from './helpers/util'
 
-const _findMonth = curry((list, key) => {
+const _getMonthIndex = curry((list, key) => {
   const _key = key.slice(0, 3).toLowerCase()
 
   return list.findIndex(m => m.toLowerCase().slice(0, 3) === _key) + 1
 })
 
-const findMonth = _findMonth(MONTHS)
+const getMonthIndex = _getMonthIndex(MONTHS)
 const century = () =>
   Math.floor(new Date().getFullYear() / 100) * 100
 
@@ -18,8 +18,8 @@ const TOKEN_PARSERS = {
   'YYYY': ['year', /\d{4}/, Number],
   'YY': ['year', /\d{2}/, n => Number(n) + century()],
   'Y': ['year', /\d{1,2}/, n => Number(n) + century()],
-  'MMMM': ['month', /[a-zA-Z]{3,9}/, findMonth],
-  'MMM': ['month', /[a-zA-Z]{3}/, findMonth],
+  'MMMM': ['month', /[a-zA-Z]{3,9}/, getMonthIndex],
+  'MMM': ['month', /[a-zA-Z]{3}/, getMonthIndex],
   'MM': ['month', /\d{2}/, Number],
   'M': ['month', /\d{1,2}/, Number],
   'DD': ['day', /\d{2}/, Number],
@@ -90,7 +90,7 @@ export default curry((format, datestring) => {
   const syntax = parseFormatString(format)
     .map(token => TOKEN_PARSERS[token] || token)
 
-  const dateMap = constuctDateMap(parseDate([], datestring, syntax))
+  const tokenMap = constuctDateMap(parseDate([], datestring, syntax))
 
-  return constructDate(dateMap)
+  return constructDate(tokenMap)
 })
