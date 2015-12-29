@@ -25,8 +25,7 @@ All functions in **date-fp** are pure. For a function to be pure it must follow 
 1. Pure functions always produce the same output given the same input.
 2. Pure functions have no side effects. This means that calling the function will not affect the world outside the function.
 
-A consequence of this is that **date-fp** will never knowingly throw an error upon receiving invalid input but it will _return_ one. Inspect the
-type signatures of **date-fp**'s functions to find out which functions behave in this manner.
+A consequence of this is that **date-fp** will never knowingly throw an error upon receiving invalid input (but it will return an invalid Date object).
 
 ### Immutability
 Dates in **date-fp** are never mutated. All operations that modify a date return a copy with the given changes and leave the original date object intact.
@@ -45,8 +44,7 @@ tomorrowAsString(new Date('2015-01-01')); // '2015-01-02';
 
 ## API
 
-### parse
-`String -> Date`
+### `parse :: String -> Date`
 
 Returns a new date from the given datestring.
 
@@ -54,8 +52,7 @@ Returns a new date from the given datestring.
 const date = D.parse('2015-01-01') // Thu Jan 01 2015 00:00:00 GMT+0000 (GMT)
 ```
 
-### clone
-`Date -> Date`
+### `clone :: Date -> Date`
 
 Returns a copy of the given date.
 
@@ -63,8 +60,7 @@ Returns a copy of the given date.
 const date = D.clone(new Date('2015-01-01')); // Thu Jan 01 2015 00:00:00 GMT+0000 (GMT)
 ```
 
-### isValid
-`Date -> Boolean`
+### `isValid :: Date -> Boolean`
 
 Verifies if a specific Javascript date object is valid.
 
@@ -76,8 +72,7 @@ var d1 = new Date('04-09-2014'); // Wed Apr 09 2014 00:00:00 GMT+0000 (GMT)
 D.isValid(d1); // true
 ```
 
-### get
-`String -> Date -> Date`
+### `get :: String -> Date -> Date`
 
 Returns the chosen portion of a date. Returns an `Invalid Date` if the provided unit of time is not valid.
 
@@ -93,8 +88,7 @@ D.get('year', date); // 2015
 
 ```
 
-### isLeapYear
-`Date -> Boolean`
+### `isLeapYear :: Date -> Boolean`
 
 Verifies if the year of the date object supplied is a leap year. Returns `false` if
 the date object is invalid.
@@ -104,8 +98,7 @@ D.isLeapYear(new Date('2015-01-01') // false
 D.isLeapYear(new Date('2004-01-01') // true
 ```
 
-### convertTo
-`String -> Date -> Number`
+### `convertTo :: String -> Date -> Number`
 
 Returns the time since the Unix epoch, in the specified unit (milliseconds, seconds, minutes, hours, days),
 of the supplied Javascript date object.
@@ -120,8 +113,7 @@ D.convertTo('hours', date) // 401376
 D.convertTo('days', date) // 16724
 ```
 
-### unixTime
-`Date -> Number`
+### `unixTime :: Date -> Number`
 
 Returns the time since the Unix epoch in seconds of the supplied Javascript date object
 Returns `NaN` if the Javascript date object is not valid.
@@ -131,8 +123,7 @@ const date = new Date('2015-10-16T00:00:00+00:00')
 D.unixTime(date) // 1444996800
 ```
 
-### set
-`String -> Number -> Date -> Date`
+### `set :: String -> Number -> Date -> Date`
 
 Returns a copy of the supplied date with the specified modification.
 Returns an `Invalid Date` if the modification results in an invalid date.
@@ -148,8 +139,7 @@ D.set('months', 12, date);
 D.set('years', 2001, date);
 ```
 
-### add
-`String -> Number -> Date -> Date`
+### `add :: String -> Number -> Date -> Date`
 
 Returns a copy of the supplied date with the specified modification.
 Returns an `Invalid Date` if the modification results in an invalid date.
@@ -166,8 +156,7 @@ D.add('years', 2001, date);
 
 ```
 
-### sub
-`String -> Number -> Date -> Date`
+### `sub :: String -> Number -> Date -> Date`
 
 Returns a copy of the supplied date with the specified modification.
 Returns an `Invalid Date` if the modification results in an invalid date.
@@ -184,8 +173,7 @@ D.sub('year', 2001, date);
 
 ```
 
-### equals
-`Date -> Date -> Boolean`
+### `equals :: Date -> Date -> Boolean`
 
 Uses value equality to determine if the two supplied dates are the same.
 Returns `false` if any of the date objects are invalid.
@@ -196,9 +184,7 @@ D.equals(date, new Date('2015-04-09')); // true
 D.equals(date, new Date('2014-01-01')); //false
 ```
 
-### diff
-
-`String -> Date -> Date -> Number`
+### `diff :: String -> Date -> Date -> Number`
 
 Returns the difference between two dates.
 Returns `NaN` if given an invalid date unit.
@@ -214,9 +200,7 @@ D.diff('months', date1, new Date('2014-04-01 11:12:13.123')); // 2
 D.diff('years', date1, new Date('2015-04-01 11:12:13.123')); // 1
 ```
 
-### min
-
-`[Date] -> Date`
+### `min :: [Date] -> Date`
 
 Takes an array of dates and returns the oldest one. Ignores invalid Javascript date objects and returns
 an `Invalid Date` if no valid date objects are provided.
@@ -231,9 +215,7 @@ D.min([date1, date2, invalidDate]); // date2
 D.min([invalidDate]); // Error
 ```
 
-### max
-
-`[Date] -> Date`
+### `max :: [Date] -> Date`
 
 Takes an array of dates and returns the latest one. Ignores invalid Javascript date objects and returns
 an `Invalid Date` if no valid date objects are provided.
@@ -248,8 +230,7 @@ D.max([date1, date2, invalidDate]); // date1
 D.max([invalidDate]); // Error
 ```
 
-### format
-`String -> Date -> String`
+### `format :: String -> Date -> String`
 
 Returns a string representation of a date on the specified format. Returns the string 'Invalid Date' if given an invalid date.
 
@@ -300,4 +281,4 @@ Thanks to the team behind [Ramda.js](https://github.com/ramda/ramda) and [moment
 ## Contributing
 Yes please!
 
-Something to note is that automatically we release to NPM on every successful commit and we also strictly follow SemVer so please update the version number in `package.json` appropriately when submitting a Pull Request.
+Something to note is that we automatically release to NPM on every successful commit and we also strictly follow SemVer so please update the version number in `package.json` appropriately when submitting a Pull Request.
