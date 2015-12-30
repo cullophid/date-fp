@@ -1,0 +1,584 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>format :: String -&gt; Date -&gt; String | date-fp</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.5.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../docs/functions/get.html" />
+    
+    
+    <link rel="prev" href="../../docs/functions/equals.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="2.6" data-chapter-title="format :: String -&gt; Date -&gt; String" data-filepath="docs/functions/format.md" data-basepath="../.." data-revision="Wed Dec 30 2015 13:59:03 GMT+0100 (CET)">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="docs/concepts.html">
+            
+                
+                    <a href="../../docs/concepts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Key concepts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="docs/functions/index.html">
+            
+                
+                    <a href="../../docs/functions/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="docs/functions/add.html">
+            
+                
+                    <a href="../../docs/functions/add.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        add :: String -&gt; Number -&gt; Date -&gt; Date
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="docs/functions/clone.html">
+            
+                
+                    <a href="../../docs/functions/clone.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        clone :: Date -&gt; Date
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="docs/functions/convert-to.html">
+            
+                
+                    <a href="../../docs/functions/convert-to.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        convertTo :: String -&gt; Date -&gt; Number
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="docs/functions/diff.html">
+            
+                
+                    <a href="../../docs/functions/diff.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        diff :: String -&gt; Date -&gt; Date -&gt; Number
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="docs/functions/equals.html">
+            
+                
+                    <a href="../../docs/functions/equals.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        equals :: Date -&gt; Date -&gt; Boolean
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6" data-path="docs/functions/format.html">
+            
+                
+                    <a href="../../docs/functions/format.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        format :: String -&gt; Date -&gt; String
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="docs/functions/get.html">
+            
+                
+                    <a href="../../docs/functions/get.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        get :: String -&gt; Date -&gt; Date
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="docs/functions/is-leap-year.html">
+            
+                
+                    <a href="../../docs/functions/is-leap-year.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        isLeapYear :: Date -&gt; Boolean
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="docs/functions/is-valid.html">
+            
+                
+                    <a href="../../docs/functions/is-valid.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        isValid :: Date -&gt; Boolean
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="docs/functions/max.html">
+            
+                
+                    <a href="../../docs/functions/max.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        max :: [Date] -&gt; Date
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="docs/functions/min.html">
+            
+                
+                    <a href="../../docs/functions/min.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.11.</b>
+                        
+                        min :: [Date] -&gt; Date
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="docs/functions/parse.html">
+            
+                
+                    <a href="../../docs/functions/parse.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.12.</b>
+                        
+                        parse :: String -&gt; String -&gt; Date
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="docs/functions/set.html">
+            
+                
+                    <a href="../../docs/functions/set.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.13.</b>
+                        
+                        set :: String -&gt; Number -&gt; Date -&gt; Date
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="docs/functions/sub.html">
+            
+                
+                    <a href="../../docs/functions/sub.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.14.</b>
+                        
+                        sub :: String -&gt; Number -&gt; Date -&gt; Date
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="docs/functions/unix-time.html">
+            
+                
+                    <a href="../../docs/functions/unix-time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.15.</b>
+                        
+                        unixTime :: Date -&gt; Number
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >date-fp</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="format">format</h2>
+<p><code>String -&gt; Date -&gt; String</code></p>
+<p>Returns a string representation of a date on the specified format. Returns the string &apos;Invalid Date&apos; if given an invalid date.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">&apos;2015-01-02 03:04:05.123&apos;</span>);
+D.format(<span class="hljs-string">&apos;YYYY-MM-DD HH:mm:ss&apos;</span>, date); <span class="hljs-comment">// &apos;2015-01-02 03:04:05&apos;</span>
+D.format(<span class="hljs-string">&apos;DD/MM/YY&apos;</span>, date); <span class="hljs-comment">// &apos;02/01/15&apos;</span>
+D.format(<span class="hljs-string">&apos;MMMM D YYYY&apos;</span>, date); <span class="hljs-comment">// &apos;January 2 2015&apos;</span>
+</code></pre>
+<p><code>format</code> support the following string tokens:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">part</th>
+<th style="text-align:center">Token</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">year</td>
+<td style="text-align:center">YYYY</td>
+<td>1971... 2015</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">YY</td>
+<td>01... 99</td>
+</tr>
+<tr>
+<td style="text-align:right">month</td>
+<td style="text-align:center">MMMM</td>
+<td>January... December</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">MMM</td>
+<td>Jan... Dec</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">MM</td>
+<td>01... 12</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">M</td>
+<td>1... 12</td>
+</tr>
+<tr>
+<td style="text-align:right">date</td>
+<td style="text-align:center">DD</td>
+<td>01... 31</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">D</td>
+<td>1... 31</td>
+</tr>
+<tr>
+<td style="text-align:right">weekday</td>
+<td style="text-align:center">dddd</td>
+<td>Sunday... Saturday</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">ddd</td>
+<td>Sun... Sat</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">dd</td>
+<td>Su... Sa</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">dd</td>
+<td>Su... Sa</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">d</td>
+<td>0... 6</td>
+</tr>
+<tr>
+<td style="text-align:right">hours</td>
+<td style="text-align:center">HH</td>
+<td>00... 23</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">H</td>
+<td>0... 23</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">hh</td>
+<td>01... 12</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">h</td>
+<td>1... 12</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">h</td>
+<td>1... 12</td>
+</tr>
+<tr>
+<td style="text-align:right">AM/PM</td>
+<td style="text-align:center">A</td>
+<td>AM,PM</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">a</td>
+<td>am,pm</td>
+</tr>
+<tr>
+<td style="text-align:right">minutes</td>
+<td style="text-align:center">mm</td>
+<td>01... 59</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">m</td>
+<td>1... 59</td>
+</tr>
+<tr>
+<td style="text-align:right">seconds</td>
+<td style="text-align:center">ss</td>
+<td>01... 59</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">s</td>
+<td>1... 59</td>
+</tr>
+<tr>
+<td style="text-align:right">Fractional Second</td>
+<td style="text-align:center">SSS</td>
+<td>001... 999</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">SS</td>
+<td>01... 99</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td style="text-align:center">S</td>
+<td>1... 9</td>
+</tr>
+<tr>
+<td style="text-align:right">Quarter of Year</td>
+<td style="text-align:center">Q</td>
+<td>1... 4</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../docs/functions/equals.html" class="navigation navigation-prev " aria-label="Previous page: equals :: Date -&gt; Date -&gt; Boolean"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../docs/functions/get.html" class="navigation navigation-next " aria-label="Next page: get :: String -&gt; Date -&gt; Date"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

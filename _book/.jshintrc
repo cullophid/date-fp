@@ -1,0 +1,31 @@
+{
+  "curly": false,
+  "eqeqeq": true,
+  "gcl": true,
+  "esnext": true,
+  "globalstrict": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": "nofunc",
+  "newcap": true,
+  "noarg": true,
+  "node": true,
+  "nonew": true,
+  "undef": true,
+  "unused": false,
+  "quotmark": "false",
+  "strict": true,
+  "trailing": true,
+  "white": false,
+  "globals": {
+     "R": false,
+     "Promise": false,
+     "logger": false,
+     "describe" : false,
+     "before": false,
+     "beforeEach": false,
+     "afterEach" : false,
+     "after" : false,
+     "it" : false
+  }
+}
