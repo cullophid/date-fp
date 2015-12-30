@@ -1,31 +1,31 @@
 # Functions
 
-[add :: String -> Number -> Date -> Date](docs/add.md)
+[add :: String -> Number -> Date -> Date](add.md)
 
-[clone :: Date -> Date](docs/clone.md)
+[clone :: Date -> Date](clone.md)
 
-[convertTo :: String -> Date -> Number](docs/convert-to.md)
+[convertTo :: String -> Date -> Number](convert-to.md)
 
-[diff :: String -> Date -> Date -> Number](docs/diff.md)
+[diff :: String -> Date -> Date -> Number](diff.md)
 
-[equals :: Date -> Date -> Boolean](docs/equals.md)
+[equals :: Date -> Date -> Boolean](equals.md)
 
-[format :: String -> Date -> String](docs/format.md)
+[format :: String -> Date -> String](format.md)
 
-[get :: String -> Date -> Date](docs/get.md)
+[get :: String -> Date -> Date](get.md)
 
-[isLeapYear :: Date -> Boolean](docs/is-leap-year.md)
+[isLeapYear :: Date -> Boolean](is-leap-year.md)
 
-[isValid :: Date -> Boolean](docs/is-valid.md)
+[isValid :: Date -> Boolean](is-valid.md)
 
-[max :: [Date] -> Date](docs/max.md)
+[max :: [Date] -> Date](max.md)
 
-[min :: [Date] -> Date](docs/min.md)
+[min :: [Date] -> Date](min.md)
 
-[parse :: String -> String -> Date](docs/parse.md)
+[parse :: String -> String -> Date](parse.md)
 
-[set :: String -> Number -> Date -> Date](docs/set.md)
+[set :: String -> Number -> Date -> Date](set.md)
 
-[sub :: String -> Number -> Date -> Date](docs/sub.md)
+[sub :: String -> Number -> Date -> Date](sub.md)
 
-[unixTime :: Date -> Number](docs/unix-time.md)
+[unixTime :: Date -> Number](unix-time.md)
