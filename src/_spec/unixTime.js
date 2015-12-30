@@ -9,6 +9,6 @@ describe('unixTime', () => {
   })
 
   it('should return the time in seconds for valid dates', () => {
-    assert.equal(unixTime(new Date('7 February, 1999')), 918345600)
+    assert.equal(unixTime(new Date(Date.UTC(1999, 1, 7))), 918345600)
   })
 })

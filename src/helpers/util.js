@@ -22,3 +22,9 @@ export const checkNaN = n => n !== n // NaN is the only number that is not equal
 
 export const checkDate = date =>
   Object.prototype.toString.call(date) === "[object Date]"
+export const set = curry((prop, value, obj) => {
+  obj[prop] = value
+  return obj
+})
+
+export const fromPairs = pairs => pairs.reduce((obj, pair) => set(pair[0], pair[1], obj), {})

@@ -15,3 +15,4 @@ deployment:
     commands:
       - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
       - npm publish
+      - ./bin/publish_docs
