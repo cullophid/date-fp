@@ -1,5 +1,4 @@
-## format
-`String -> Date -> String`
+## format :: String -> Date -> String
 
 Returns a string representation of a date on the specified format. Returns the string 'Invalid Date' if given an invalid date.
 

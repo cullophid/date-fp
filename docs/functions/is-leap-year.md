@@ -1,5 +1,4 @@
-## isLeapYear
-`Date -> Boolean`
+## isLeapYear :: Date -> Boolean
 
 Verifies if the year of the date object supplied is a leap year. Returns `false` if
 the date object is invalid.

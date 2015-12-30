@@ -1,5 +1,4 @@
-## add
-`String -> Number -> Date -> Date`
+## add :: String -> Number -> Date -> Date
 
 Returns a copy of the supplied date with the specified modification.
 Returns an `Invalid Date` if the modification results in an invalid date.

@@ -1,6 +1,4 @@
-## min
-
-`[Date] -> Date`
+## min :: [Date] -> Date
 
 Takes an array of dates and returns the oldest one. Ignores invalid Javascript date objects and returns
 an `Invalid Date` if no valid date objects are provided.

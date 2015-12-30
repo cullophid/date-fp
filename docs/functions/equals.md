@@ -1,5 +1,4 @@
-## equals
-`Date -> Date -> Boolean`
+## equals :: Date -> Date -> Boolean
 
 Uses value equality to determine if the two supplied dates are the same.
 Returns `false` if any of the date objects are invalid.

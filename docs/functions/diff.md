@@ -1,6 +1,4 @@
-## diff
-
-`String -> Date -> Date -> Number`
+## diff :: String -> Date -> Date -> Number
 
 Returns the difference between two dates.
 Returns `NaN` if given an invalid date unit.

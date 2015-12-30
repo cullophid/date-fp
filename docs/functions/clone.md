@@ -1,5 +1,4 @@
-## clone
-`Date -> Date`
+## clone :: Date -> Date
 
 Returns a copy of the given date.
 

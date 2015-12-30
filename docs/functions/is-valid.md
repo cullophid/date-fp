@@ -1,5 +1,4 @@
-## isValid
-`Date -> Boolean`
+## isValid :: Date -> Boolean
 
 Verifies if a specific Javascript date object is valid.
 

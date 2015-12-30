@@ -1,6 +1,4 @@
-## max
-
-`[Date] -> Date`
+## max :: [Date] -> Date
 
 Takes an array of dates and returns the latest one. Ignores invalid Javascript date objects and returns
 an `Invalid Date` if no valid date objects are provided.

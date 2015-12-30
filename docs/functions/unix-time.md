@@ -1,5 +1,4 @@
-## unixTime
-`Date -> Number`
+## unixTime :: Date -> Number
 
 Returns the time since the Unix epoch in seconds of the supplied Javascript date object
 Returns `NaN` if the Javascript date object is not valid.

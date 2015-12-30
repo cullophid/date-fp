@@ -1,5 +1,4 @@
-## get
-`String -> Date -> Date`
+## get :: String -> Date -> Date
 
 Returns the chosen portion of a date. Returns an `Invalid Date` if the provided unit of time is not valid.
 

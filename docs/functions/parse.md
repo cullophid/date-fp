@@ -1,5 +1,4 @@
-## parse
-`String -> String -> Date`
+## parse :: String -> String -> Date
 
 Returns a new date by parsing the datestring based on the given format.
 

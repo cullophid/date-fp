@@ -1,5 +1,4 @@
-## convertTo
-`String -> Date -> Number`
+## convertTo :: String -> Date -> Number
 
 Returns the time since the Unix epoch, in the specified unit (milliseconds, seconds, minutes, hours, days),
 of the supplied Javascript date object.
