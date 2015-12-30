@@ -13,9 +13,9 @@
     "test": "babel-node node_modules/.bin/isparta cover _mocha -- --compilers js:babel-register 'src/**/_spec/*.js'",
     "posttest": "istanbul check-coverage --branches 100",
     "testBuild": "mocha buildTest.js",
+    "watch": "mocha --watch --compilers js:babel-register 'src/**/_spec/*.js'",
     "docs:prepare": "gitbook install",
     "docs:watch": "npm run docs:prepare && gitbook serve",
-    "watch": "mocha --watch --compilers js:babel-register 'src/**/_spec/*.js'",
     "docs:build": "npm run docs:prepare && rm -rf _book && gitbook build"
   },
   "repository": {
