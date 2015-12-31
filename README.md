@@ -9,6 +9,8 @@
 ## Motivation
 There are several excellent JavaScript libraries for managing dates in JavaScript but they are generally built to be used in the object-oriented programming paradigm. This makes them cumbersome to include in a functional context.
 
+All functions in **date-fp** are pure, autocurried and will not mutate the date objects they are applied to.
+
 *If you are not familiar with functional programming in JavaScript read [Professor Frisby's Mostly Adequate Guide to  Functional Programming](https://drboolean.gitbooks.io/mostly-adequate-guide/content/)*
 
 *Also check out [Ramda.js](http://ramdajs.com/0.17/index.html) (A great library for functional programming with JavaScript)*
