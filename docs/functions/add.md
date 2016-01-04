@@ -4,13 +4,13 @@ Returns a copy of the supplied date with the specified modification.
 Returns an `Invalid Date` if the modification results in an invalid date.
 
 ```js
-const date = new Date();
-D.add('milliseconds', 123, date);
-D.add('seconds', 34, date);
-D.add('minutes', 22, date);
-D.add('hours', 13, date);
-D.add('days', 23, date);
-D.add('months', 12, date);
-D.add('years', 2001, date);
+const date = new Date('2015-01-01 01:01:01.000');
+D.add('milliseconds', 1, date); // 2015-01-01 01:01:01.1
+D.add('seconds', 1, date); // 2015-01-01 01:01:02.0
+D.add('minutes', 1, date); // 2015-01-01 01:02:01.0
+D.add('hours', 1, date); // 2015-01-01 02:01:01.0
+D.add('days', 1, date); // 2015-01-02 01:01:01.0
+D.add('months', 1, date); // 2015-02-01 01:01:01.0
+D.add('years', 1, date); // 2016-01-01 01:01:01.0
 
 ```
