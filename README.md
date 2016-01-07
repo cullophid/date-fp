@@ -13,7 +13,7 @@ All functions in **date-fp** are pure, autocurried and will not mutate the date 
 
 *If you are not familiar with functional programming in JavaScript read [Professor Frisby's Mostly Adequate Guide to  Functional Programming](https://drboolean.gitbooks.io/mostly-adequate-guide/content/)*
 
-*Also check out [Ramda.js](http://ramdajs.com) (A great library for functional programming with JavaScript)*
+*Also check out [Ramda](http://ramdajs.com) (A great library for functional programming with JavaScript)*
 
 ## Documentation
 
