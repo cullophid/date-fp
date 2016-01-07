@@ -1,4 +1,3 @@
-
 import curry from 'lodash.curry'
 const steps = {
   milliseconds: 1,
@@ -32,8 +31,8 @@ export default curry((step, count, date) => {
   case 'years':
     return _addYear(count, date)
   default:
-    if (steps[step] === undefined) {
-      return new Error(`Unit is invalid, must be one of ${Object.keys(steps)},months,years. Got: ${step}`)
+    if (steps[step] === void 0) {
+      return new Date('invalid')
     }
     return new Date((steps[step] * count) + date.getTime())
   }
