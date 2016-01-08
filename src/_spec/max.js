@@ -30,7 +30,7 @@ describe('max', () => {
     assert.equal(isValid(actual), false)
   })
 
-  it('should return an invalid date when passed no dates', () => {
+  it('should return an invalid date when passed only invalid dates', () => {
     const actual = max([invalidDate, invalidDate1])
 
     assert(checkDate(actual))
