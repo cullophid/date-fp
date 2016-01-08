@@ -70,12 +70,11 @@ describe('add', () => {
     assert(!isValid(actual))
   })
 
-  it('should return an error if the unit of time is invalid', () => {
-    const actual = add('foo', 1, new Date('2015-01-30')).message
+  it('should return an invalid date if the unit of time is invalid', () => {
+    const actual = add('foo', 1, new Date('2015-01-30'))
 
-    assert.equal(
-      actual,
-      'Unit is invalid, must be one of milliseconds,seconds,minutes,hours,days,months,years. Got: foo')
+    assert(checkDate(actual))
+    assert(!isValid(actual))
   })
 
   it('should work for year', () => {
