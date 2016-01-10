@@ -1,6 +1,8 @@
 import assert from 'assert'
 import min from '../min'
 import isValid from '../isValid'
+import {checkDate} from '../helpers/util'
+
 describe('min', () => {
 
   const minDate1 = new Date('2015-01-01 11:22:33.333')
@@ -24,11 +26,14 @@ describe('min', () => {
   it('should return an invalid date when passed no dates', () => {
     const actual = min([])
 
+    assert(checkDate(actual))
     assert.equal(isValid(actual), false)
   })
-  it('should return an invalid date when passed no dates', () => {
+
+  it('should return an invalid date when passed only invalid dates', () => {
     const actual = min([invalidDate, invalidDate1])
 
+    assert(checkDate(actual))
     assert.equal(isValid(actual), false)
   })
 
