@@ -63,7 +63,7 @@ describe('parse', () => {
     assert.equal(isValid(actual), false)
   })
 
-  it('should return Invalid Date if given bad Month', () => {
+  it('should return Invalid Date if given bad month', () => {
     const datestring = '2015-13-01'
     const pattern = 'YYYY-MM-DD'
     const actual = parse(pattern, datestring)
@@ -71,28 +71,28 @@ describe('parse', () => {
     assert.equal(isValid(actual), false)
   })
 
-  it('should return Invalid Date if given bad Date', () => {
+  it('should return Invalid Date if given bad date', () => {
     const datestring = '2015-02-29'
     const pattern = 'YYYY-MM-DD'
     const actual = parse(pattern, datestring)
 
     assert.equal(isValid(actual), false)
   })
-  it('should return Invalid Date if given bad Hour', () => {
+  it('should return Invalid Date if given bad hour', () => {
     const datestring = '2015-11-01 24:00:00'
     const pattern = 'YYYY-MM-DD HH:mm:ss'
     const actual = parse(pattern, datestring)
 
     assert.equal(isValid(actual), false)
   })
-  it('should return Invalid Date if given bad Hour', () => {
+  it('should return Invalid Date if given bad minutes', () => {
     const datestring = '2015-11-01 22:60:00'
     const pattern = 'YYYY-MM-DD HH:mm:ss'
     const actual = parse(pattern, datestring)
 
     assert.equal(isValid(actual), false)
   })
-  it('should return Invalid Date if given bad Hour', () => {
+  it('should return Invalid Date if given bad seconds', () => {
     const datestring = '2015-11-01 22:00:60'
     const pattern = 'YYYY-MM-DD HH:mm:ss'
     const actual = parse(pattern, datestring)
