@@ -1,6 +1,4 @@
 import curry from 'lodash.curry'
-
-import add from './add'
 import {DATE_UNITS} from './helpers/constants'
 
 
