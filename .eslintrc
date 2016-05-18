@@ -1,14 +1,11 @@
----
+# ---
   env:
     browser: true
     node: true
     es6: true
-  plugins:
-    - react
 
   ecmaFeatures:
-    jsx: true
-    modules: true
+    # modules: true
 
   rules:
     #Possible Errors
@@ -153,7 +150,7 @@
     max-nested-callbacks: 1        # - specify the maximum depth callbacks can be nested
     new-cap: 1                     # - require a capital letter for constructors
     new-parens: 1                  # - disallow the omission of parentheses when invoking a constructor with no arguments
-    newline-after-var: 1           # - require or disallow an empty newline after variable declarations
+    newline-after-var: 0           # - require or disallow an empty newline after variable declarations
     no-array-constructor: 1        # - disallow use of the Array constructor
     no-continue: 1                 # - disallow use of the continue statement
     no-inline-comments: 0          # - disallow comments inline after code
