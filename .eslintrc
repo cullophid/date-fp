@@ -5,7 +5,7 @@
     es6: true
 
   ecmaFeatures:
-    # modules: true
+    modules: true
 
   rules:
     #Possible Errors
