@@ -10,9 +10,8 @@ const getWeek = _date => {
   // set the weekday to sunday
   date.setDate(date.getDate() + (7 - getWeekDay(date)))
   firstWeek.setDate(firstWeek.getDate() + (7 - getWeekDay(firstWeek)))
-  console.log('dates', date, firstWeek)
   // return the diff in weeks. add 1 because we are starting at week 1
-  return  1 + Math.round((date.getTime() - firstWeek.getTime()) / DATE_UNITS.weeks)
+  return 1 + Math.round((date.getTime() - firstWeek.getTime()) / DATE_UNITS.weeks)
 }
 
 const getters = {
