@@ -42,6 +42,12 @@ describe('format', () => {
   it('M', () => {
     assert.equal(format('M', date), '3')
   })
+  it('ww', () => {
+    assert.equal(format('ww', new Date('2015-02-10')), '07')
+  })
+  it('w', () => {
+    assert.equal(format('w', new Date('2015-02-10')), '7')
+  })
 
   it('DD', () => {
     assert.equal(format('DD', date), '04')

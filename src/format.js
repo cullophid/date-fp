@@ -2,6 +2,7 @@ import curry from 'lodash.curry'
 import {DATE_TOKENS, WEEKDAYS, MONTHS} from './helpers/constants'
 import {fill, firstN, lastN} from './helpers/util'
 import isValid from './isValid'
+import get from './get'
 
 const tokenFunctions = {
   YYYY: d => fill(4, d.getFullYear()),
@@ -10,6 +11,8 @@ const tokenFunctions = {
   MMM: d => firstN(3, MONTHS[d.getMonth()]),
   MM: d => fill(2, d.getMonth() + 1),
   M: d => d.getMonth() + 1,
+  w: d => get('week', d),
+  ww: d => fill(2, get('week', d)),
   DD: d => fill(2, d.getDate()),
   D: d => d.getDate(),
   dddd: d => WEEKDAYS[d.getDay()],

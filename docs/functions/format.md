@@ -19,6 +19,8 @@ D.format('MMMM D YYYY', date); // 'January 2 2015'
 |                 | MMM   | Jan... Dec          |
 |                 | MM    | 01... 12            |
 |                 | M     | 1... 12             |
+|week             | ww    | 01... 53            |
+|                 | w     | 1... 53             |
 |date             | DD    | 01... 31            |
 |                 | D     | 1... 31             |
 |weekday          | dddd  | Sunday... Saturday  |
