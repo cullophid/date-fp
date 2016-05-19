@@ -5,7 +5,7 @@ import {DATE_UNITS} from './helpers/constants'
 const getWeek = _date => {
   const getWeekDay = d => d.getDay() ? d.getDay() : 7
   const date = new Date(_date)
-  // 4th of jan is always week 1. This is because week numbers are rediculous and make no logical sense
+  // 4th of jan is always week 1. This is because week numbers are ridiculous and make no logical sense
   const firstWeek = new Date(date.getFullYear(), 0, 4)
   // set the weekday to sunday
   date.setDate(date.getDate() + (7 - getWeekDay(date)))
