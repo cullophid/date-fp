@@ -9,6 +9,7 @@ D.get('seconds', date); // 33
 D.get('minutes', date); // 22
 D.get('hours', date); // 11
 D.get('date', date); // 2
+D.get('day', date); // 5
 D.get('week', date); // 1
 D.get('month', date); // 1
 D.get('year', date); // 2015
