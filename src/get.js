@@ -20,6 +20,7 @@ const getters = {
   'minutes': date => date.getMinutes(),
   'hours': date => date.getHours(),
   'date': date => date.getDate(),
+  'day': date => date.getDay(),
   'week': getWeek,
   'month': date => date.getMonth() + 1,
   'year': date => date.getFullYear()
