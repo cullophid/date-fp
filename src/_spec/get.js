@@ -50,6 +50,13 @@ describe('get', () => {
     assert.equal(date, 2)
   })
 
+  it('should return the day', () => {
+    const input = new Date('2016-06-15 11:22:33.123')
+    const date = get('day', input)
+
+    assert.equal(date, 3)
+  })
+
   it('should return the week for a monday', () => {
     const input = new Date('2015-03-02 09:08:05.023')
     const week = get('week', input)
