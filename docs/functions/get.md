@@ -13,5 +13,6 @@ D.get('day', date); // 5
 D.get('week', date); // 1
 D.get('month', date); // 1
 D.get('year', date); // 2015
+D.get('timezoneOffset', date); // -480 (diff to UTC)
 
 ```
