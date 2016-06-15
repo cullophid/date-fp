@@ -85,7 +85,7 @@ describe('get', () => {
     assert.equal(year, 2015)
   })
 
-  it('should return timezone', () => {
+  it('should return timezoneOffset', () => {
     const input = new Date('2015-01-02 11:22:33.123')
     const timezoneOffset = get('timezoneOffset', input)
 
