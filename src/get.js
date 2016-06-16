@@ -23,7 +23,8 @@ const getters = {
   'day': date => date.getDay(),
   'week': getWeek,
   'month': date => date.getMonth() + 1,
-  'year': date => date.getFullYear()
+  'year': date => date.getFullYear(),
+  'timezoneOffset': date => date.getTimezoneOffset()
 }
 
 export default curry((prop, date) => {
