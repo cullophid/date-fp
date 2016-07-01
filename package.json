@@ -1,15 +1,16 @@
 {
   "name": "date-fp",
-  "version": "4.4.1",
+  "version": "4.4.2",
   "description": "Functional programming date management.",
-  "main": "build/date-fp.js",
+  "main": "build/index.js",
   "dependencies": {
     "lodash.curry": "^3.0.2"
   },
   "scripts": {
     "webpack": "webpack src/index.js build/date-fp.js --config webpack.config.js",
     "uglify": "uglifyjs build/date-fp.js -o build/date-fp.min.js --source-map build/date-fp.min.map -p relative",
-    "build": "npm run webpack && npm run uglify",
+    "build": "npm run webpack && npm run uglify && npm run build:modules",
+    "build:modules": "babel src --out-dir build --ignore src/_spec",
     "test": "babel-node node_modules/.bin/isparta cover _mocha -- --compilers js:babel-register 'src/**/_spec/*.js'",
     "posttest": "istanbul check-coverage --branches 100",
     "testBuild": "mocha buildTest.js",
