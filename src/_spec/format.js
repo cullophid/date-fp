@@ -138,6 +138,6 @@ describe('format', () => {
   })
 
   it('Q', () => {
-    assert.equal(format('Q', new Date('2015-10-01')), '4')
+    assert.equal(format('Q', new Date('2015-11-15')), '4')
   })
 })
