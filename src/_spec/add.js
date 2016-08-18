@@ -58,7 +58,7 @@ describe('add', () => {
   })
 
   it('should work for months', () => {
-    const actual = add('months', 1, new Date(0))
+    const actual = add('months', 1, new Date('2015-01-15'))
 
     assert.equal(1, actual.getMonth())
   })
@@ -78,7 +78,7 @@ describe('add', () => {
   })
 
   it('should work for year', () => {
-    const actual = add('years', 1, new Date(0))
+    const actual = add('years', 1, new Date('1970-06-15'))
 
     assert.equal(1971, actual.getFullYear())
   })
