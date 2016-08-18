@@ -83,10 +83,12 @@ describe('format', () => {
 
   it('hh', () => {
     assert.equal(format('hh', new Date('2015-03-04 22:08:05.023')), '10')
+    assert.equal(format('hh', new Date('2015-03-04 12:01:01')), '12');
   })
 
   it('h', () => {
     assert.equal(format('h', date), '9')
+    assert.equal(format('h', new Date('2015-03-04 12:01:01')), '12');
   })
 
   it('mm', () => {
