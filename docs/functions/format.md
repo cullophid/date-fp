@@ -26,12 +26,10 @@ D.format('MMMM D YYYY', date); // 'January 2 2015'
 |weekday          | dddd  | Sunday... Saturday  |
 |                 | ddd   | Sun... Sat          |
 |                 | dd    | Su... Sa            |
-|                 | dd    | Su... Sa            |
 |                 | d     | 0... 6              |
 |hours            | HH    | 00... 23            |
 |                 | H     | 0... 23             |
 |                 | hh    | 01... 12            |
-|                 | h     | 1... 12             |
 |                 | h     | 1... 12             |
 |AM/PM            | A     | AM,PM               |
 |                 | a     | am,pm               |
