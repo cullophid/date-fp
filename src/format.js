@@ -21,8 +21,8 @@ const tokenFunctions = {
   d: d => d.getDay(),
   HH: d => fill(2, d.getHours()),
   H: d => d.getHours(),
-  hh: d => fill(2, d.getHours() % 12),
-  h: d => d.getHours() % 12,
+  hh: d => fill(2, modCeiling(12, d.getHours())),
+  h: d => modCeiling(12, d.getHours()),
   mm: d => fill(2, d.getMinutes()),
   m: d => d.getMinutes(),
   ss: d => fill(2, d.getSeconds()),
@@ -34,6 +34,8 @@ const tokenFunctions = {
   S: d => firstN(1, fill(3, d.getMilliseconds())),
   Q: d => Math.ceil((d.getMonth() + 1) / 3),
 }
+
+const modCeiling = (mod, val) => val % mod || mod
 
 const swapTokenWithValue = curry((date, token) => tokenFunctions[token] ? tokenFunctions[token](date) : token)
 
