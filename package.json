@@ -1,10 +1,10 @@
 {
   "name": "date-fp",
-  "version": "4.4.5",
+  "version": "4.4.6",
   "description": "Functional programming date management.",
   "main": "build/index.js",
   "dependencies": {
-    "lodash.curry": "^3.0.2"
+    "lodash.curry": "4.1.1"
   },
   "scripts": {
     "webpack": "webpack src/index.js build/date-fp.js --config webpack.config.js",
@@ -34,7 +34,7 @@
     "gitbook-cli": "^1.0.1",
     "isparta": "^4.0.0",
     "istanbul": "^0.4.1",
-    "mocha": "^2.3.3",
+    "mocha": "3.1.x",
     "uglifyjs": "^2.4.10",
     "webpack": "^1.12.2"
   },
