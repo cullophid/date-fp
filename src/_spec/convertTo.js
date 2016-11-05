@@ -1,9 +1,10 @@
 import assert from 'assert'
 import convertTo from '../convertTo'
 import {checkNaN} from '../helpers/util'
+import of from '../of'
 
 describe('convertTo', () => {
-  const date = new Date(Date.UTC(1973, 11, 28))
+  const date = of([1973, 11, 28])
 
   it('should be curried', () => {
     assert.equal(convertTo('milliseconds')(date), convertTo('milliseconds', date))
@@ -22,7 +23,7 @@ describe('convertTo', () => {
   })
 
   it('should return the time in seconds for valid dates', () => {
-    assert.equal(convertTo('seconds', new Date(Date.UTC(1999, 1, 7))), 918345600)
+    assert.equal(convertTo('seconds', of([1999, 1, 7])), 918345600)
   })
 
   it('should return the time in minutes for valid dates', () => {

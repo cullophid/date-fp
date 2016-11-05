@@ -1,9 +1,10 @@
 import assert from 'assert'
 import equals from '../equals'
+import of from '../of'
 
 describe('equals', () => {
 
-  const date = new Date('2011-06-19 18:40:33.333')
+  const date = of([2011, 5, 19, 18, 40, 33, 333])
   const invalidDate = new Date('foo')
 
   it('should return false when given two invalid dates', () => {
@@ -19,10 +20,10 @@ describe('equals', () => {
   })
 
   it('should return false for different dates', () => {
-    assert.strictEqual(equals(date, new Date('2013-01-01')), false)
+    assert.strictEqual(equals(date, of([2013, 0, 1])), false)
   })
 
   it('should return true for the same date', () => {
-    assert.strictEqual(equals(date, new Date('2011-06-19 18:40:33.333')), true)
+    assert.strictEqual(equals(date, of([2011, 5, 19, 18, 40, 33, 333])), true)
   })
 })

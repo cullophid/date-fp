@@ -2,13 +2,14 @@ import assert from 'assert'
 import min from '../min'
 import isValid from '../isValid'
 import {checkDate} from '../helpers/util'
+import of from '../of'
 
 describe('min', () => {
 
-  const minDate1 = new Date('2015-01-01 11:22:33.333')
-  const minDate2 = new Date('2014-04-09 01:22:33.333')
-  const date1 = new Date('2015-06-11 12:00:00.000')
-  const date2 = new Date('2015-11-11 09:00:00.000')
+  const minDate1 = of([2015, 0, 1, 11, 22, 33, 333])
+  const minDate2 = of([2014, 3, 9, 1, 22, 33, 333])
+  const date1 = of([2015, 5, 11, 12, 0, 0, 0])
+  const date2 = of([2015, 10, 11, 9, 0, 0, 0])
   const invalidDate = new Date('foo')
   const invalidDate1 = new Date('bar')
 

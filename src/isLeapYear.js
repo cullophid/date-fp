@@ -1,2 +1,3 @@
 // @flow weak
-export default date => new Date(date.getFullYear(), 1, 29).getMonth() === 1
+import of from './of'
+export default date => of([date.getUTCFullYear(), 1, 29]).getUTCMonth() === 1

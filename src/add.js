@@ -1,5 +1,6 @@
 //@flow
 import curry from 'lodash.curry'
+import fromTime from './fromTime'
 
 const steps = {
   milliseconds: 1,
@@ -13,8 +14,8 @@ const steps = {
 const _addMonth = (count, date) => {
   const clone = new Date(date)
 
-  clone.setMonth(date.getMonth() + count)
-  if (clone.getMonth() !== (date.getMonth() + count) % 12) {
+  clone.setMonth(date.getUTCMonth() + count)
+  if (clone.getUTCMonth() !== (date.getUTCMonth() + count) % 12) {
     return new Date('invalid')
   }
   return clone
@@ -23,7 +24,7 @@ const _addMonth = (count, date) => {
 const _addYear = (count, date) => {
   const clone = new Date(date)
 
-  clone.setFullYear(date.getFullYear() + count)
+  clone.setUTCFullYear(date.getUTCFullYear() + count)
   return clone
 }
 
@@ -37,6 +38,6 @@ export default curry((step, count, date) => {
     if (steps[step] === void 0) {
       return new Date('invalid')
     }
-    return new Date((steps[step] * count) + date.getTime())
+    return fromTime((steps[step] * count) + date.getTime())
   }
 })

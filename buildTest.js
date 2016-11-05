@@ -3,6 +3,8 @@ var assert = require('assert');
 var D = require('./');
 
 var FUNCTIONS = [
+  'of',
+  'fromTime',
   'add',
   'clone',
   'equals',

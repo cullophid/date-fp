@@ -5,6 +5,7 @@ machine:
 test:
   override:
     - npm install
+    - npm run flow
     - npm test
     - npm run build
     - npm run testBuild

@@ -4,7 +4,8 @@
   "description": "Functional programming date management.",
   "main": "build/index.js",
   "dependencies": {
-    "lodash.curry": "4.1.1"
+    "lodash.curry": "4.1.1",
+    "timezones.json": "^1.1.0"
   },
   "scripts": {
     "flow": "flow check",
