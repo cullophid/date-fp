@@ -1,3 +1,4 @@
+//@flow weak
 import curry from 'lodash.curry'
 import {find} from './helpers/util'
 

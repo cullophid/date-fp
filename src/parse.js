@@ -1,4 +1,4 @@
-/* eslint no-undefined:0 */
+//@flow weak
 import curry from 'lodash.curry'
 import {DATE_TOKENS, MONTHS} from './helpers/constants'
 import {fromPairs} from './helpers/util'

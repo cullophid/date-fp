@@ -1,3 +1,4 @@
+//@flow
 import curry from 'lodash.curry'
 import {DATE_TOKENS, WEEKDAYS, MONTHS} from './helpers/constants'
 import {fill, firstN, lastN} from './helpers/util'

@@ -1,4 +1,6 @@
+//@flow
 import curry from 'lodash.curry'
+
 const steps = {
   milliseconds: 1,
   seconds: 1000,
