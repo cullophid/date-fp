@@ -1,3 +1,4 @@
+//@flow
 import curry from 'lodash.curry'
 import isValid from './isValid'
 import {DATE_UNITS} from './helpers/constants'

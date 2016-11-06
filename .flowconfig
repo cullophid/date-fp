@@ -1,0 +1,9 @@
+[ignore]
+.*/node_modules/config-chain/test/broken.json
+.*/node_modules/npm/test/fixtures/config/package.json
+
+[include]
+
+[libs]
+
+[options]

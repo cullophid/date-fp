@@ -7,6 +7,7 @@
     "lodash.curry": "4.1.1"
   },
   "scripts": {
+    "flow": "flow check",
     "webpack": "webpack src/index.js build/date-fp.js --config webpack.config.js",
     "uglify": "uglifyjs build/date-fp.js -o build/date-fp.min.js --source-map build/date-fp.min.map -p relative",
     "build": "npm run webpack && npm run uglify && npm run build:modules",
@@ -29,8 +30,7 @@
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-register": "^6.3.13",
-    "eslint": "^1.7.1",
-    "eslint-plugin-react": "^3.6.2",
+    "flow-bin": "^0.34.0",
     "gitbook-cli": "^1.0.1",
     "isparta": "^4.0.0",
     "istanbul": "^0.4.1",

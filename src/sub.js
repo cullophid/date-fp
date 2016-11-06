@@ -1,3 +1,4 @@
+// @flow
 import curry from 'lodash.curry'
 import add from './add'
 

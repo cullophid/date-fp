@@ -1,4 +1,3 @@
-/* eslint max-statements:0 */
 import assert from 'assert'
 import set from '../set'
 import isValid from '../isValid'
