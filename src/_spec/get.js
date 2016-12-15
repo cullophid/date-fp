@@ -71,6 +71,13 @@ describe('get', () => {
     assert.equal(week, 10)
   })
 
+  it('should return 53 when the week belongs to previous year', () => {
+    const input = new Date('2016-01-01 11:22:33.123')
+    const week = get('week', input)
+
+    assert.equal(week, 53)
+  })
+
   it('should return the month', () => {
     const input = new Date('2015-01-02 11:22:33.123')
     const month = get('month', input)
