@@ -6,6 +6,7 @@ const SECOND = 1000
 const MINUTE = 60 * SECOND
 const HOUR = 60 * MINUTE
 const DAY = 24 * HOUR
+const WEEK = 7 * DAY
 
 describe('add', () => {
   it('should return a new date with the correct time difference', () => {
@@ -54,6 +55,12 @@ describe('add', () => {
     const actual = add('days', 1, new Date(0))
 
     assert.equal(DAY, actual.getTime())
+  })
+
+  it('should work for weeks', () => {
+    const actual = add('weeks', 1, new Date(0))
+
+    assert.equal(WEEK, actual.getTime())
   })
 
   it('should work for months', () => {
