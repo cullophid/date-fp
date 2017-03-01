@@ -13,7 +13,8 @@ const getWeek = _date => {
   date.setUTCDate(date.getUTCDate() + (7 - getWeekDay(date)))
   firstWeek.setUTCDate(firstWeek.getUTCDate() + (7 - getWeekDay(firstWeek)))
   // return the diff in weeks. add 1 because we are starting at week 1
-  return 1 + Math.round((date.getTime() - firstWeek.getTime()) / DATE_UNITS.weeks)
+  // when the math result is 0, return 53 instead
+  return 1 + Math.round((date.getTime() - firstWeek.getTime()) / DATE_UNITS.weeks) || 53
 }
 
 const getters = {
