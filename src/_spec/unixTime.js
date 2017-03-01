@@ -1,6 +1,7 @@
 import assert from 'assert'
 import unixTime from '../unixTime'
 import {checkNaN} from '../helpers/util'
+import of from '../of'
 
 describe('unixTime', () => {
 
@@ -9,6 +10,6 @@ describe('unixTime', () => {
   })
 
   it('should return the time in seconds for valid dates', () => {
-    assert.equal(unixTime(new Date(Date.UTC(1999, 1, 7))), 918345600)
+    assert.equal(unixTime(of([1999, 1, 7])), 918345600)
   })
 })

@@ -2,13 +2,14 @@ import assert from 'assert'
 import parse from '../parse'
 import format from '../format'
 import isValid from '../isValid'
+import of from '../of'
 
 describe('parse', () => {
   it('should parse YYYY-MM-DD', () => {
     const datestring = '2010-01-02'
     const pattern = 'YYYY-MM-DD'
-    const actual = parse(pattern, datestring).toString()
-    const expected = new Date(2010, 0, 2).toString()
+    const actual = parse(pattern, datestring).getTime()
+    const expected = of([2010, 0, 2]).getTime()
 
     assert.equal(actual, expected)
   })
@@ -16,16 +17,24 @@ describe('parse', () => {
   it('should parse DD/MM/YYYY', () => {
     const datestring = '01/12/2014'
     const pattern = 'DD/MM/YYYY'
-    const actual = parse(pattern, datestring).toString()
-    const expected = new Date(2014, 11, 1).toString()
+    const actual = parse(pattern, datestring).getTime()
+    const expected = of([2014, 11, 1]).getTime()
 
     assert.equal(actual, expected)
   })
   it('should parse DD/MM/YY', () => {
-    const datestring = '01/12/14'
+    const datestring = '01/12/04'
     const pattern = 'DD/MM/YY'
-    const actual = parse(pattern, datestring).toString()
-    const expected = new Date(2014, 11, 1).toString()
+    const actual = parse(pattern, datestring).getTime()
+    const expected = of([2004, 11, 1]).getTime()
+
+    assert.equal(actual, expected)
+  })
+  it('should parse DD/MM/Y', () => {
+    const datestring = '01/12/4'
+    const pattern = 'DD/MM/Y'
+    const actual = parse(pattern, datestring).getTime()
+    const expected = of([2004, 11, 1]).getTime()
 
     assert.equal(actual, expected)
   })
@@ -33,8 +42,8 @@ describe('parse', () => {
   it('should parse MMMM Do, YYYY', () => {
     const datestring = 'July 5th, 2013'
     const pattern = 'MMMM Do, YYYY'
-    const actual = parse(pattern, datestring).toString()
-    const expected = new Date('2013-07-05 00:00:00').toString()
+    const actual = parse(pattern, datestring).getTime()
+    const expected = of([2013, 6, 5, 0, 0, 0]).getTime()
 
     assert.equal(actual, expected)
   })
@@ -42,23 +51,18 @@ describe('parse', () => {
   it('should parse HH:mm:ss.SSS', () => {
     const datestring = '12:13:14.156'
     const pattern = 'HH:mm:ss.SSS'
-    const actual = format('YYYY-MM-DD HH:mm:ss.SSS', parse(pattern, datestring))
-    const d = new Date()
+    const actual = parse(pattern, datestring)
 
-    d.setHours(12)
-    d.setMinutes(13)
-    d.setSeconds(14)
-    d.setMilliseconds(156)
-    const expected = format('YYYY-MM-DD HH:mm:ss.SSS', d)
+    const expected = of([1970, 0, 1, 12, 13, 14, 156])
 
-    assert.equal(actual, expected)
+    assert.equal(actual.getTime(), expected.getTime())
   })
 
 
   it('should return an invalid date if given a date before 100-01-01', () => {
     const datestring = '0099-01-01'
     const pattern = 'YYYY-MM-DD'
-    const actual = parse(pattern, datestring).toString()
+    const actual = parse(pattern, datestring)
 
     assert.equal(isValid(actual), false)
   })

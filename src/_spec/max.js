@@ -2,13 +2,14 @@ import assert from 'assert'
 import max from '../max'
 import {checkDate} from '../helpers/util'
 import isValid from '../isValid'
+import of from '../of'
 
 describe('max', () => {
 
-  const maxDate1 = new Date('2014-01-01 11:22:33.333')
-  const maxDate2 = new Date('2015-04-09 01:22:33.333')
-  const date1 = new Date('2013-06-11 12:00:00.000')
-  const date2 = new Date('2011-06-19 18:40:00.000')
+  const maxDate1 = of([2014, 0, 1, 11, 22, 33, 333])
+  const maxDate2 = of([2915, 3, 9, 1, 22, 33, 333])
+  const date1 = of([2013, 5, 11, 12, 0, 0, 0])
+  const date2 = of([2011, 5, 19, 18, 40, 0, 0])
   const invalidDate = new Date('foo')
   const invalidDate1 = new Date('bar')
 

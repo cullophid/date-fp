@@ -2,6 +2,10 @@
 import curry from 'lodash.curry'
 import {DATE_TOKENS, MONTHS} from './helpers/constants'
 import {fromPairs} from './helpers/util'
+import fromTime from './fromTime'
+import of from './of'
+
+const EPOCH = fromTime(0)
 
 const _getMonthIndex = curry((list, key) => {
   const _key = key.slice(0, 3).toLowerCase()
@@ -10,14 +14,12 @@ const _getMonthIndex = curry((list, key) => {
 })
 
 const getMonthIndex = _getMonthIndex(MONTHS)
-const century = () =>
-  Math.floor(new Date().getFullYear() / 100) * 100
 
 // define a parser for each supported date token
 const TOKEN_PARSERS = {
   'YYYY': ['year', /\d{4}/, Number],
-  'YY': ['year', /\d{2}/, n => Number(n) + century()],
-  'Y': ['year', /\d{1,2}/, n => Number(n) + century()],
+  'YY': ['year', /\d{2}/, n => Number(n) + 2000],
+  'Y': ['year', /\d{1,2}/, n => Number(n) + 2000],
   'MMMM': ['month', /[a-zA-Z]{3,9}/, getMonthIndex],
   'MMM': ['month', /[a-zA-Z]{3}/, getMonthIndex],
   'MM': ['month', /\d{2}/, Number],
@@ -58,31 +60,30 @@ const constuctDateMap = dateparts =>
 const validateDate = (date, parts) => {
 
   if (
-   (date.getFullYear() !== parts[0]) ||
-   (date.getMonth() !== parts[1]) ||
-   (date.getDate() !== parts[2]) ||
-   (date.getHours() !== parts[3]) ||
-   (date.getMinutes() !== parts[4]) ||
-   (date.getSeconds() !== parts[5]) ||
-   (date.getMilliseconds() !== parts[6])
+   (date.getUTCFullYear() !== parts[0]) ||
+   (date.getUTCMonth() !== parts[1]) ||
+   (date.getUTCDate() !== parts[2]) ||
+   (date.getUTCHours() !== parts[3]) ||
+   (date.getUTCMinutes() !== parts[4]) ||
+   (date.getUTCSeconds() !== parts[5]) ||
+   (date.getUTCMilliseconds() !== parts[6])
  ) return new Date(undefined)
   return date
 }
 
 // returns a Date from a dateMap
 const constructDate = d => {
-  const now = new Date()
   const dateParts = [
-    d.year || now.getFullYear(),
-    d.month ? d.month - 1 : now.getMonth(),
-    d.day || now.getDate(),
+    d.year || 1970,
+    d.month ? d.month - 1 : 0,
+    d.day || 1,
     d.hour || 0,
     d.minute || 0,
     d.second || 0,
     d.millisecond || 0,
   ]
 
-  return validateDate(new Date(...dateParts), dateParts)
+  return validateDate(of(dateParts), dateParts)
 }
 
 export default curry((format, datestring) => {

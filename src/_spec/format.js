@@ -1,11 +1,12 @@
 import assert from 'assert'
 import format from '../format'
+import of from '../of'
 
-const date = new Date('2015-03-04 09:08:05.023')
+const date = of([2015, 2, 4, 9, 8, 5, 23])
 
 describe('format', () => {
   it('complex date string', () => {
-    assert.equal(format('YYYY-MM-DD HH:mm:ss.SSS', new Date('2015-03-04 22:08:05.023')), '2015-03-04 22:08:05.023')
+    assert.equal(format('YYYY-MM-DD HH:mm:ss.SSS', of([2015, 2, 4, 22, 8, 5, 23])), '2015-03-04 22:08:05.023')
   })
 
   it('should be curried', () => {
@@ -42,10 +43,10 @@ describe('format', () => {
     assert.equal(format('M', date), '3')
   })
   it('ww', () => {
-    assert.equal(format('ww', new Date('2015-02-10')), '07')
+    assert.equal(format('ww', of([2015, 1, 10])), '07')
   })
   it('w', () => {
-    assert.equal(format('w', new Date('2015-02-10')), '7')
+    assert.equal(format('w', of([2015, 1, 10])), '7')
   })
 
   it('DD', () => {
@@ -81,13 +82,13 @@ describe('format', () => {
   })
 
   it('hh', () => {
-    assert.equal(format('hh', new Date('2015-03-04 22:08:05.023')), '10')
-    assert.equal(format('hh', new Date('2015-03-04 12:01:01')), '12');
+    assert.equal(format('hh', of([2015, 2, 4, 22, 8, 5, 23])), '10')
+    assert.equal(format('hh', of([2015, 2, 4, 12, 1, 1])), '12');
   })
 
   it('h', () => {
     assert.equal(format('h', date), '9')
-    assert.equal(format('h', new Date('2015-03-04 12:01:01')), '12');
+    assert.equal(format('h', of([2015, 2, 4, 12, 1, 1])), '12');
   })
 
   it('mm', () => {
@@ -107,19 +108,19 @@ describe('format', () => {
   })
 
   it('A', () => {
-    assert.equal(format('A', new Date('2015-03-04 22:08:05.023')), 'PM')
+    assert.equal(format('A', of([2015, 2, 4, 22, 8, 5, 23])), 'PM')
   })
 
   it('A', () => {
-    assert.equal(format('A', new Date('2015-03-04 11:08:05.023')), 'AM')
+    assert.equal(format('A', of([2015, 2, 4, 11, 8, 5, 23])), 'AM')
   })
 
   it('a', () => {
-    assert.equal(format('a', new Date('2015-03-04 22:08:05.023')), 'pm')
+    assert.equal(format('a', of([2015, 2, 4, 22, 8, 5, 23])), 'pm')
   })
 
   it('a', () => {
-    assert.equal(format('a', new Date('2015-03-04 11:08:05.023')), 'am')
+    assert.equal(format('a', of([2015, 2, 4, 11, 8, 5, 23])), 'am')
   })
 
   it('SSS', () => {
@@ -139,6 +140,6 @@ describe('format', () => {
   })
 
   it('Q', () => {
-    assert.equal(format('Q', new Date('2015-11-15')), '4')
+    assert.equal(format('Q', of([2015, 10, 15])), '4')
   })
 })

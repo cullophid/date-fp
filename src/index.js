@@ -13,10 +13,14 @@ import max from './max'
 import isValid from './isValid'
 import convertTo from './convertTo'
 import unixTime from './unixTime'
+import fromTime from './fromTime'
+import of from './of'
 
 const clone = date => new Date(date.getTime())
 
 module.exports = {
+  of,
+  fromTime,
   add,
   clone,
   equals,
