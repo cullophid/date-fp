@@ -40,6 +40,12 @@ describe('diff', () => {
     assert.equal(diff('hours', date1, date2), 11)
   })
 
+  it('weeks', () => {
+    const date2 = new Date('2013-01-16 22:22:33.223')
+
+    assert.equal(diff('weeks', date1, date2), 2)
+  })
+
   it('months', () => {
     const date2 = new Date('2014-02-02 22:22:33.223')
 
