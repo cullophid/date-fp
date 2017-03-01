@@ -75,6 +75,14 @@ describe('set', () => {
     assert.equal(isValid(actual), false)
   })
 
+  it('should work for week', () => {
+    const input = new Date('2017-02-14 11:22:33.333')
+    const actual = set('week', 2, input)
+    assert.equal(actual.getMonth() + 1, 1)
+    assert.equal(actual.getDay(), 2)
+    assert.equal(actual.getDate(), 10)
+  })
+
   it('should work for month', () => {
     const input = new Date('2015-01-01 11:22:33.333')
     const actual = set('month', 12, input)
