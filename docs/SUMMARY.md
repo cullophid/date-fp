@@ -2,6 +2,8 @@
 
   * [Key concepts](docs/concepts.md)
   * [Functions](docs/functions/index.md)
+    * [of](docs/functions/of.md)
+    * [fromTime](docs/functions/fromTime.md)
     * [add](docs/functions/add.md)
     * [clone](docs/functions/clone.md)
     * [convertTo](docs/functions/convert-to.md)
