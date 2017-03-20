@@ -1,0 +1,48 @@
+{
+  "name": "date-fp",
+  "version": "5.0.3",
+  "description": "Functional programming date management.",
+  "main": "build/index.js",
+  "dependencies": {
+    "lodash.curry": "4.1.1"
+  },
+  "scripts": {
+    "flow": "flow check",
+    "webpack": "webpack src/index.js build/date-fp.js --config webpack.config.js",
+    "uglify": "uglifyjs build/date-fp.js -o build/date-fp.min.js --source-map build/date-fp.min.map -p relative",
+    "build": "npm run webpack && npm run uglify && npm run build:modules",
+    "build:modules": "babel src --out-dir build --ignore src/_spec",
+    "test": "babel-node node_modules/.bin/isparta cover _mocha -- --compilers js:babel-register 'src/**/_spec/*.js'",
+    "posttest": "istanbul check-coverage --branches 100",
+    "testBuild": "mocha buildTest.js",
+    "watch": "mocha --watch --compilers js:babel-register 'src/**/_spec/*.js'",
+    "docs:prepare": "gitbook install",
+    "docs:watch": "npm run docs:prepare && gitbook serve",
+    "docs:build": "npm run docs:prepare && rm -rf _book && gitbook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cullophid/date-fp"
+  },
+  "devDependencies": {
+    "babel": "^6.3.13",
+    "babel-cli": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "flow-bin": "^0.34.0",
+    "gitbook-cli": "^1.0.1",
+    "isparta": "^4.0.0",
+    "istanbul": "^0.4.1",
+    "mocha": "3.1.x",
+    "uglifyjs": "^2.4.10",
+    "webpack": "^1.12.2"
+  },
+  "files": [
+    "README.md",
+    "build",
+    "dist"
+  ],
+  "author": "",
+  "license": "ISC"
+}

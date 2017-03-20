@@ -1,0 +1,19 @@
+machine:
+  node:
+    version: 4.0.0
+
+test:
+  override:
+    - npm install
+    - npm run flow
+    - npm test
+    - npm run build
+    - npm run testBuild
+
+deployment:
+ npm:
+    branch: master
+    commands:
+      - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
+      - ./bin/publish_docs
+      - npm publish

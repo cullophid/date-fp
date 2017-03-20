@@ -1,0 +1,11 @@
+#! /bin/bash
+npm run docs:build
+cd _book
+git init
+git commit --allow-empty -m 'Update docs'
+git checkout -b gh-pages
+git add .
+git config --global user.email "andreas.moller@gmail.com"
+git config --global user.name "Andreas"
+git commit -am 'Update docs'
+git push git@github.com:cullophid/date-fp gh-pages --force
