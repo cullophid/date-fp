@@ -26,3 +26,5 @@ export const set = curry((prop, value, obj) => {
 })
 
 export const fromPairs = pairs => pairs.reduce((obj, pair) => set(pair[0], pair[1], obj), {})
+
+export const mod = curry((x, n) => (x % n + n) % n)
