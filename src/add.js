@@ -15,7 +15,7 @@ const steps = {
 const _addMonth = (count, date) => {
   const clone = new Date(date)
 
-  clone.setMonth(date.getUTCMonth() + count)
+  clone.setUTCMonth(date.getUTCMonth() + count)
 
   if (clone.getUTCMonth() !== mod(date.getUTCMonth() + count, 12)) {
     return new Date('invalid')
